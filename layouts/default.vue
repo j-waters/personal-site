@@ -113,6 +113,7 @@ export default {
 	color: rgb(210, 255, 255);
 	letter-spacing: 1px;
 	transition: transform 1s 2.6s, font-size 3s;
+	text-align: center;
 }
 
 .title.before {
@@ -187,7 +188,7 @@ export default {
 
 .link {
 	color: rgb(210, 255, 255);
-	font-size: 40px;
+	font-size: 2.6em;
 	display: inline-block;
 }
 
@@ -201,6 +202,33 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	box-sizing: border-box;
+}
+
+@media screen and (min-width: 0px) {
+	html {
+		font-size: 8px;
+	}
+	.main {
+		top: calc(50% - 20em);
+	}
+}
+
+@media screen and (min-width: 376px) {
+	html {
+		font-size: 10px;
+	}
+	.main {
+		top: calc(50% - 20em);
+	}
+}
+
+@media screen and (min-width: 480px) {
+	html {
+		font-size: 10px;
+	}
+	.main {
+		top: calc(50% - 10em);
+	}
 }
 
 *,
