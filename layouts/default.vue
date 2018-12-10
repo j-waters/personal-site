@@ -67,7 +67,7 @@ export default {
 	width: 100vw;
 	height: 100vh;
 	background: linear-gradient(rgba(0, 33, 71, 1) 0%, rgba(47, 183, 186, 1) 100%);
-	transition: opacity 3s;
+	transition: opacity 1.5s;
 	opacity: 1;
 }
 
@@ -78,7 +78,7 @@ export default {
 .particles {
 	width: 100%;
 	height: 99%;
-	transition: opacity 3s .5s;
+	transition: opacity 1.5s .25s;
 	opacity: 1;
 }
 
@@ -94,7 +94,7 @@ export default {
 	transform: translateX(-50%);
 	width: fit-content;
 	transition: transform, top, left, position;
-	transition-duration: 3s;
+	transition-duration: 1.5s;
 }
 
 .main.after {
@@ -112,7 +112,7 @@ export default {
 	font-size: 10em;
 	color: rgb(210, 255, 255);
 	letter-spacing: 1px;
-	transition: transform 1s 2.6s, font-size 3s;
+	transition: transform 0.5s 1.3s, font-size 1.5s;
 	text-align: center;
 }
 
@@ -135,7 +135,7 @@ export default {
 	height: 2px;
 	width: 90%;
 	margin-left: 5%;
-	transition: margin-left 1s 1.5s, width 1s 1.5s, transform 1s 0.5s;
+	transition: margin-left 0.5s 0.75s, width 0.5s 0.75s, transform 0.5s 0.25s;
 	transform-origin: 150% 100%;
 }
 
@@ -145,7 +145,7 @@ export default {
 }
 
 .line.after {
-	transition: margin-left 1s 1.5s, width 1s 1.5s, transform 1s 2s;
+	transition: margin-left 0.5s 0.75s, width 0.5s 0.75s, transform 0.5s 1s;
 	transform: rotate(-90deg) translate(150%, 50%);
 	width: 6em;
 	margin-left: calc(95% - 6em);
@@ -158,21 +158,21 @@ export default {
 	margin-left: 5%;
 	height: fit-content;
 	overflow: hidden;
-	transition: width 1s 2s, left 1s 1s, transform 1s 0.5s;
+	transition: width 0.5s 1s, left 0.5s 0.5s, transform 0.5s 0.25s;
 }
 
 .links-mask.after {
 	left: 100%;
 	transform: translateY(-110%);
 	width: 80%;
-	transition: width 1s 2s, left 0.8s 1.5s, transform 1s 2s;
+	transition: width 0.5s 1s, left 0.4s 0.75s, transform 0.5s 1s;
 }
 
 
 .links {
 	text-align: justify;
 	width: 100%;
-	transition: transform 1s 3s;
+	transition: transform 0.5s 1.5s;
 }
 
 .links.before {
