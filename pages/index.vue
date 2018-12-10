@@ -1,24 +1,29 @@
 <template>
 	<div style="width: 100vw; height:100wh; overflow: hidden">
-		<div class="top">
+		<div>
 
 		</div>
-		<div class="bottom">
 
-		</div>
-		<h1 id="t1" ref="james" :style="jamesStyle" class="title">
-			James
-		</h1>
-		<h1 id="t2" ref="waters" :style="watersStyle" class="title">
-			Waters
-		</h1>
+		<div v-show="false">
+			<div class="top">
 
-		<div id="main" class="">
-			<div class="px-6 py-4">
-				hello
+			</div>
+			<div class="bottom">
+
+			</div>
+			<h1 id="t1" ref="james" :style="jamesStyle" class="title">
+				James
+			</h1>
+			<h1 id="t2" ref="waters" :style="watersStyle" class="title">
+				Waters
+			</h1>
+
+			<div id="main" class="">
+				<div class="px-6 py-4">
+					hello
+				</div>
 			</div>
 		</div>
-
 	</div>
 </template>
 
@@ -173,16 +178,6 @@ body {
 	color: #8d99ae;
 	left: 50%;
 	transform: translateX(-50%);
-}
-
-.title {
-	font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
-		Arial, sans-serif;
-	display: block;
-	font-weight: 300;
-	font-size: 8vw;
-	color: #35495e;
-	letter-spacing: 1px;
 }
 
 .subtitle {

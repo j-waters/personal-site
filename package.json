@@ -1,34 +1,35 @@
 {
-  "name": "Personal-Site",
-  "version": "1.0.0",
-  "description": "The personal website of James Waters",
-  "author": "James",
-  "private": true,
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
-  },
-  "dependencies": {
-    "@nuxtjs/axios": "^5.0.0",
-    "cross-env": "^5.2.0",
-    "ks-vue-scrollmagic": "^1.0.2",
-    "nuxt": "^2.0.0",
-    "vue-animate-scroll": "^0.1.4"
-  },
-  "devDependencies": {
-    "autoprefixer": "^8.6.4",
-    "babel-eslint": "^8.2.1",
-    "eslint": "^5.0.1",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-prettier": "2.6.2",
-    "eslint-plugin-vue": "^4.0.0",
-    "nodemon": "^1.11.0",
-    "prettier": "1.14.3",
-    "tailwindcss": "~0.6.6"
-  }
+	"name": "Personal-Site",
+	"version": "1.0.0",
+	"description": "The personal website of James Waters",
+	"author": "James",
+	"private": true,
+	"scripts": {
+		"dev": "nuxt",
+		"build": "nuxt build",
+		"start": "nuxt start",
+		"generate": "nuxt generate",
+		"lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+		"deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+	},
+	"dependencies": {
+		"@nuxtjs/axios": "^5.0.0",
+		"cross-env": "^5.2.0",
+		"ks-vue-scrollmagic": "^1.0.2",
+		"nuxt": "^2.0.0",
+		"vue-animate-scroll": "^0.1.4"
+	},
+	"devDependencies": {
+		"autoprefixer": "^8.6.4",
+		"babel-eslint": "^8.2.1",
+		"eslint": "^5.0.1",
+		"eslint-config-prettier": "^3.3.0",
+		"eslint-loader": "^2.0.0",
+		"eslint-plugin-prettier": "2.6.2",
+		"eslint-plugin-vue": "^4.0.0",
+		"nodemon": "^1.11.0",
+		"prettier": "1.14.3",
+		"tailwindcss": "~0.6.6",
+		"vue-particles": "^1.0.9"
+	}
 }
