@@ -3,21 +3,23 @@
 <template>
 	<div class="parent">
 		<div :class="{front: true, before: before, after: after}">
-			<vue-particles
-				:particle-opacity="0.7"
-				:particles-number="150"
-				:particle-size="2"
-				:lines-width="0.5"
-				:line-linked="true"
-				:line-opacity="0.4"
-				:lines-distance="150"
-				:move-speed="0.4"
-				:hover-effect="false"
-				:click-effect="false"
-				:class="{particles: true, before: before, after: after}"
-				color="#dedede"
-				lines-color="#dedede"
-			/>
+			<no-ssr>
+				<vue-particles
+					:particle-opacity="0.7"
+					:particles-number="150"
+					:particle-size="2"
+					:lines-width="0.5"
+					:line-linked="true"
+					:line-opacity="0.4"
+					:lines-distance="150"
+					:move-speed="0.4"
+					:hover-effect="false"
+					:click-effect="false"
+					:class="{particles: true, before: before, after: after}"
+					color="#dedede"
+					lines-color="#dedede"
+				/>
+			</no-ssr>
 			<div :class="{main: true, after: after}">
 				<div class="title-mask"><h1 :class="{title: true, before: before, after: after}">James Waters</h1></div>
 				<div :class="{line: true, before: before, after: after}"/>
