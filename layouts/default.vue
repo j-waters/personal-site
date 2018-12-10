@@ -45,7 +45,7 @@ export default {
 	data() {
 		return {
 			before: true,
-			after: true
+			after: false
 		}
 	},
 	mounted() {
