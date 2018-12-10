@@ -158,7 +158,7 @@ export default {
 	margin-left: 5%;
 	height: fit-content;
 	overflow: hidden;
-	transition: width 1s 2s, left 1s 1.2s, transform 1s 0.5s;
+	transition: width 1s 2s, left 1s 1s, transform 1s 0.5s;
 }
 
 .links-mask.after {
