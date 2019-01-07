@@ -11,7 +11,7 @@
 		"generate": "nuxt generate",
 		"lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
 		"deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
-		"gendeploy": "npm run generate && sleep 1 && npm run deploy"
+		"gendeploy": "npm run generate && sleep 1 && cp -r dist/img dist/projects/img && npm run deploy"
 	},
 	"dependencies": {
 		"@nuxtjs/axios": "^5.0.0",
