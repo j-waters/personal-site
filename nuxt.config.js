@@ -38,7 +38,8 @@ module.exports = {
 		  src: '~/plugins/ksvuescrollmagic',
 		  ssr: false
 	  },
-	  { src: '~/plugins/vue-particles', ssr: false }
+	  { src: '~/plugins/vue-particles', ssr: false },
+	  '~/plugins/vuebar'
   ],
 
   /*

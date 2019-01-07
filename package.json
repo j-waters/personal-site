@@ -18,7 +18,10 @@
 		"cross-env": "^5.2.0",
 		"ks-vue-scrollmagic": "^1.0.2",
 		"nuxt": "^2.0.0",
-		"vue-animate-scroll": "^0.1.4"
+		"push-dir": "^0.4.1",
+		"simplebar-vue": "^0.1.1",
+		"vue-animate-scroll": "^0.1.4",
+		"vuebar": "0.0.20"
 	},
 	"devDependencies": {
 		"autoprefixer": "^8.6.4",

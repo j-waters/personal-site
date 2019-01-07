@@ -1,5 +1,3 @@
-/* eslint-disable vue/attribute-hyphenation */
-0.7"
 <template>
 	<div class="parent">
 		<div :class="{front: true, before: before, after: after}">
@@ -12,7 +10,7 @@
 					:line-linked="true"
 					:line-opacity="0.4"
 					:lines-distance="150"
-					:move-speed="0.4"
+					:move-speed="0.4 * pmod"
 					:hover-effect="false"
 					:click-effect="false"
 					:class="{particles: true, before: before, after: after}"
@@ -21,16 +19,14 @@
 				/>
 			</no-ssr>
 			<div :class="{main: true, after: after}">
-				<div class="title-mask"><h1 :class="{title: true, before: before, after: after}">James Waters</h1></div>
+				<router-link to="/" style="text-decoration: none"><div class="title-mask"><h1 :class="{title: true, before: before, after: after}">James Waters</h1></div></router-link>
 				<div :class="{line: true, before: before, after: after}"/>
 				<div :class="{'links-mask': true, after: after}">
-					<div :class="{links: true, before: before}">
-						<div class="link" @click="after = !after">
-							Projects
-						</div>
-						<div class="link">
+					<div :class="{links: true, before: before, after: after}">
+						<router-link to="/projects"><div class="link">Projects</div></router-link>
+						<a class="link" href="https://github.com/j-waters" target="_blank">
 							Github
-						</div>
+						</a>
 						<div class="link">
 							Contact
 						</div>
@@ -38,7 +34,15 @@
 				</div>
 			</div>
 		</div>
-		<nuxt/>
+		<transition name="slide">
+			<div v-if="after" class="content">
+				<div class="content-wrap">
+
+						<router-view/>
+
+				</div>
+			</div>
+		</transition>
 	</div>
 </template>
 
@@ -46,8 +50,19 @@
 export default {
 	data() {
 		return {
-			before: true,
-			after: false
+			before: this.$route.name == 'index',
+			after: this.$route.name != 'index',
+			pmod: 1
+		}
+	},
+	watch: {
+		$route(to, from) {
+			if (to.name == 'index') {
+				this.after = false
+			}
+			if (from.name == 'index') {
+				this.after = true
+			}
 		}
 	},
 	mounted() {
@@ -59,11 +74,31 @@ export default {
 </script>
 
 <style>
+.content {
+	position: absolute;
+	width: 80%;
+	margin-left: 10%;
+	background: whitesmoke;
+	font-size: 24px;
+	top: 4em;
+	transition: top 1.5s;
+	border-radius: .25rem;
+	box-shadow: 0 15px 30px 0 rgba(0,0,0,.11), 0 5px 15px 0 rgba(0,0,0,.08);
+}
+
+.content-wrap {
+	padding: 10px;
+}
+
 .parent {
 	background-color: #191f24;
+	/*height: 100vh;
+	overflow: hidden;
+	position: relative;*/
 }
 
 .front {
+	position: fixed;
 	width: 100vw;
 	height: 100vh;
 	background: linear-gradient(rgba(0, 33, 71, 1) 0%, rgba(47, 183, 186, 1) 100%);
@@ -78,7 +113,7 @@ export default {
 .particles {
 	width: 100%;
 	height: 99%;
-	transition: opacity 1.5s .25s;
+	transition: opacity 1.5s 0.25s;
 	opacity: 1;
 }
 
@@ -86,9 +121,8 @@ export default {
 	opacity: 0;
 }
 
-
 .main {
-	position: absolute;
+	position: fixed;
 	top: calc(50% - 10em);
 	left: 50%;
 	transform: translateX(-50%);
@@ -136,7 +170,7 @@ export default {
 	width: 90%;
 	margin-left: 5%;
 	transition: margin-left 0.5s 0.75s, width 0.5s 0.75s, transform 0.5s 0.25s;
-	transform-origin: 150% 100%;
+	transform-origin: 158% 100%;
 }
 
 .line.before {
@@ -146,9 +180,9 @@ export default {
 
 .line.after {
 	transition: margin-left 0.5s 0.75s, width 0.5s 0.75s, transform 0.5s 1s;
-	transform: rotate(-90deg) translate(150%, 50%);
-	width: 6em;
-	margin-left: calc(95% - 6em);
+	transform: rotate(-90deg) translate(175%, 50%);
+	width: 5em;
+	margin-left: calc(95% - 5em);
 }
 
 .links-mask {
@@ -168,7 +202,6 @@ export default {
 	transition: width 0.5s 1s, left 0.4s 0.75s, transform 0.5s 1s;
 }
 
-
 .links {
 	text-align: justify;
 	width: 100%;
@@ -178,7 +211,6 @@ export default {
 .links.before {
 	transform: translateY(-100%);
 }
-
 
 .links:after {
 	content: '';
@@ -190,11 +222,13 @@ export default {
 	color: rgb(210, 255, 255);
 	font-size: 2.6em;
 	display: inline-block;
+	text-decoration: none;
 }
+
 
 html {
 	font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-		sans-serif;
+	sans-serif;
 	font-size: 16px;
 	word-spacing: 1px;
 	-ms-text-size-adjust: 100%;
@@ -204,7 +238,7 @@ html {
 	box-sizing: border-box;
 }
 
-@media screen and (min-width: 0px) {
+@media screen and (max-width: 375px) {
 	html {
 		font-size: 8px;
 	}
@@ -213,23 +247,149 @@ html {
 	}
 }
 
-@media screen and (min-width: 376px) {
+@media screen and (max-width: 560px) {
 	html {
 		font-size: 10px;
 	}
 	.main {
 		top: calc(50% - 20em);
 	}
+
+	.main.after {
+		width: 90vw;
+		left: 5vw;
+	}
+	.title.after {
+		font-size: 3.6em;
+		width: 90vw;
+	}
+
+	.line.after {
+		transform: initial;
+		width: 90vw;
+		margin-left: initial;
+	}
+
+	.links-mask.after {
+		left: initial;
+		transform: initial;
+		width: 90vw;
+		margin-left: 0;
+	}
+
+	.content {
+		top: 3.2em;
+	}
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 1020px) {
 	html {
 		font-size: 10px;
 	}
-	.main {
-		top: calc(50% - 10em);
+}
+
+@media screen and (max-width: 1024px) and (min-width: 560px){
+	.main.after {
+		left: 1vw;
+		width: 98vw;
+	}
+	.title.after {
+		font-size: 2.6em;
+	}
+
+	.line.after {
+		width: 2.6em;
+		transform: rotate(-90deg) translate(170%, 50%);
+		margin-left: 145px;
+	}
+
+	.line {
+		transform-origin: 160% 100%;
+	}
+
+	.links-mask.after {
+		left: 158px;
+		transform: translateY(-110%);
+		width: 60%;
+	}
+
+	.link {
+		font-size: 2em;
+		padding-right: 1em;
+	}
+
+	.links.after {
+		text-align: left;
+	}
+
+	.links.after:after {
+		display: none;
 	}
 }
+
+@media screen and (max-width: 768px) and (min-width: 560px){
+	.content {
+		top: 1.8em;
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px){
+	.content {
+		top: 2.4em;
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px){
+	.line.after {
+		margin-left: 220px;
+	}
+
+	.links-mask.after {
+		left: 255px;
+		width: 62%;
+		transform: translateY(-110%);
+	}
+
+	html {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 1024px){
+	.content {
+		width: 100% !important;
+		margin-left: 0 !important;
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px){
+	.content {
+		width: 90% !important;
+		margin-left: 5% !important;
+	}
+	html {
+		font-size: 12px;
+	}
+
+	.main.after {
+		left: 5%;
+	}
+}
+
+@media screen and (min-width: 1441px){
+	.content {
+		top: 5em;
+	}
+}
+
+.slide-enter-active, .slide-leave-active {
+	transition: top 1.5s;
+}
+.slide-enter, .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	top: 100vh;
+}
+
+
 
 *,
 *:before,
@@ -237,4 +397,23 @@ html {
 	box-sizing: border-box;
 	margin: 0;
 }
+
+
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
 </style>
+

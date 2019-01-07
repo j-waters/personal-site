@@ -1,0 +1,118 @@
+<template>
+	<div>
+		<project v-for="(project, i) in projects" :key="project.name" :reverse="i % 2 === 1" :data="project"/>
+	</div>
+</template>
+
+<script>
+import Logo from '~/components/Logo.vue'
+import Project from '../components/Project'
+
+export default {
+	components: {
+		Project,
+		Logo
+	},
+	data() {
+		return {
+			isMounted: false,
+			projects: [
+				{
+					name: 'Lucrum',
+					subtitle: 'A money management and budgeting system',
+					description:
+						'Designed for personal use during university, ' +
+						'Lucrum can import bank transactions, categorising them automatically, ' +
+						'and has a clean modern interface that works on desktop and mobile.<br/> <br/>' +
+						'Lucrum was developed to be a free yet full featured alternative to ' +
+						'other money management apps, many of which lacked student specific ' +
+						'features like bill splitting, keeping up with lent money and ' +
+						'many different accounts. <br/> <br/>' +
+						'The frontend is built using Vue JS JavaScript framework, and is based on Google\'s ' +
+						'Material Design 2 specifications. The backend is written in Python using Flask, and can be used ' +
+						'independently from the frontend as a REST API. ',
+				},
+				{
+					name: 'Fetula',
+					subtitle: 'A self hosted photo management system',
+					description:
+						'A web based photo viewing and management system, with basic editing capabilities and AI. ' +
+						'Fetula can ingest a large structured photo collection, automatically sorting and tagging each image. <br/> <br/>' +
+						'Fetula was designed to replace as a replacement to Google Photos, keeping as many of the cool AI tricks while ' +
+						'working seamlessly with a pre-existing offline photo collection. In fact, features such as object and facial recognition ' +
+						'are not only implemented, but are a lot more transparent and come with more options. <br/> <br/>' +
+						'The frontend was built using Vue JS, trying to mimic the look of Google Photos. The backend was written in Python using Flask.'
+				},
+				{
+					name: 'Libellus',
+					subtitle: 'A life-logging dashboard',
+					description:
+						'Libellus was created to combine data from many different sources like Google Fit and the bank, as well as phone and PC ' +
+						'usage data. It also supports diary entries and mood tracking.<br/> <br/>' +
+						''
+				}
+			]
+		}
+	},
+	computed: {},
+	mounted() {
+		//this.$nextTick(this.createScene)
+		this.isMounted = true
+	},
+	destroyed() {
+		// Destroy ScrollMagic when our component is removed from DOM
+		//this.$ksvuescr.$emit('destroy')
+	},
+	methods: {
+		createScene() {
+			let TweenMax = this.$gsap.TweenMax
+			let tween = new this.$gsap.TimelineMax()
+			tween.add(TweenMax.to(`#t2`, 0, { x: '-50%' }), 0)
+			tween.add(TweenMax.to(`#t1`, 50, { left: '10px', x: '0%' }), 0)
+			tween.add(TweenMax.to(`#main`, 20, { top: this.jamesRect.height }), 30)
+			tween.add(TweenMax.to(`#t2`, 10, { x: '-25%' }), 15)
+			tween.add(
+				[
+					//TweenMax.to(`.top`, 30, { rotation: '-90deg', x: '--12.6%' }),
+					TweenMax.to(`.bottom`, 30, { rotation: '-90deg', x: '-12.6%' })
+				],
+				20
+			)
+			tween.add(TweenMax.to(`#t2`, 25, { y: '-118%' }), 25)
+			tween.add(TweenMax.to(`#t2`, 15, { left: this.jamesRect.width + 30 + 'px', x: '0%' }), 35)
+
+			const scrollDuration = this.jamesRect.top
+			// create scene and set its params
+			const scene = new this.$scrollmagic.Scene({
+				offset: 0, // start scene after scrolling for 100px
+				duration: scrollDuration // pin the element for 400px of scrolling
+			})
+				//.setPin('#t1')
+				.setTween(tween)
+
+			const fix1 = new this.$scrollmagic.Scene({
+				offset: scrollDuration // start scene after scrolling for 100px
+			}).setClassToggle('#t1', 'fixed')
+
+			const fix2 = new this.$scrollmagic.Scene({
+				offset: scrollDuration // start scene after scrolling for 100px
+			}).setClassToggle('#t2', 'fixed')
+
+			// Add scene to ScrollMagic controller by emiting an 'addScene' event on vm.$ksvuescr (which is our global event bus)
+			this.$ksvuescr.$emit('addScene', 'scene', scene)
+
+			this.$ksvuescr.$emit('addScene', 'fix1', fix1)
+
+			this.$ksvuescr.$emit('addScene', 'fix2', fix2)
+		}
+	}
+}
+</script>
+
+<style scoped>
+/* Sample `apply` at-rules with Tailwind CSS
+.container {
+  @apply min-h-screen flex justify-center items-center text-center mx-auto;
+}
+*/
+</style>
