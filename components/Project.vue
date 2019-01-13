@@ -33,7 +33,6 @@ export default {
 }
 
 .image {
-	background: red;
 	width: 40%;
 	height: 100%;
 	margin-right: 10%;

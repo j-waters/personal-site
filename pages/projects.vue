@@ -28,9 +28,9 @@ export default {
 						'other money management apps, many of which lacked student specific ' +
 						'features like bill splitting, keeping up with lent money and ' +
 						'many different accounts. <br/> <br/>' +
-						'The frontend is built using Vue JS JavaScript framework, and is based on Google\'s ' +
+						"The frontend is built using Vue JS JavaScript framework, and is based on Google's " +
 						'Material Design 2 specifications. The backend is written in Python using Flask, and can be used ' +
-						'independently from the frontend as a REST API. ',
+						'independently from the frontend as a REST API. '
 				},
 				{
 					name: 'Fetula',
@@ -44,12 +44,27 @@ export default {
 						'The frontend was built using Vue JS, trying to mimic the look of Google Photos. The backend was written in Python using Flask.'
 				},
 				{
+					name: 'Multipyer',
+					subtitle: 'A multiplayer game framework and dashboard',
+					description:
+						'Multipyer was created for my A-Level Computer Science (and received an A* grade). ' +
+						'It was designed to allow beginner programmers to create online multiplayer games in Python and JavaScript ' +
+						'without having to write much complex code or setup their own server.<br/> <br/>' +
+						'After creating an account on the Multipyer website, developers would have access to an online console ' +
+						'to create game servers, leaderboards, and manage player accounts. Then, using the Python and JavaScript clients, ' +
+						'the developer could create a working multiplayer game in as little as 3 lines of code. <br/> <br/>' +
+						'The Multipyer server was created using JavaScript and jQuery on the frontend with a Python backend. The ' +
+						'Python and JavaScript client libraries were written in their own languages.'
+				},
+				{
 					name: 'Libellus',
 					subtitle: 'A life-logging dashboard',
 					description:
 						'Libellus was created to combine data from many different sources like Google Fit and the bank, as well as phone and PC ' +
 						'usage data. It also supports diary entries and mood tracking.<br/> <br/>' +
-						''
+						"It's purpose was to act as an automatic diary, and provide insights into how things like sleep patterns and exercise were " +
+						"effected by the day's activities, and how one's mood and productivity changed depending on what apps were used during a day. <br/> <br/>" +
+						'The frontend was built using Vue JS, the backend in Python.'
 				}
 			]
 		}
