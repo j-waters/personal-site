@@ -35,7 +35,7 @@ module.exports = {
   */
   plugins: [
 	  {
-		  src: '~/plugins/ksvuescrollmagic',
+		  src: '~/plugins/vuescrollreveal',
 		  ssr: false
 	  },
 	  { src: '~/plugins/vue-particles', ssr: false },

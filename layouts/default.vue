@@ -27,9 +27,9 @@
 						<a class="link" href="https://github.com/j-waters" target="_blank">
 							Github
 						</a>
-						<div class="link">
+						<a class="link" href="mailto:james@jcwaters.co.uk" target="_blank">
 							Contact
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>

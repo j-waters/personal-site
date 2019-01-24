@@ -21,6 +21,7 @@
 		"push-dir": "^0.4.1",
 		"simplebar-vue": "^0.1.1",
 		"vue-animate-scroll": "^0.1.4",
+		"vue-scroll-reveal": "^1.0.11",
 		"vuebar": "0.0.20"
 	},
 	"devDependencies": {

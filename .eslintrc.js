@@ -19,6 +19,7 @@ module.exports = {
 		"vue/html-indent": [1, 'tab'],
 		'vue/no-multi-spaces': 'warn',
 		'vue/html-self-closing': 'warn',
-		'vue/require-default-prop': 'off'
+		'vue/require-default-prop': 'off',
+		'vue/require-prop-types': 'off'
 	}
 }

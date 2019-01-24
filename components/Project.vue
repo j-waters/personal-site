@@ -1,14 +1,17 @@
 <template>
-	<div :class="{project: true, reverse: reverse}">
+	<div v-scroll-reveal="{ delay: 250}" :class="{project: true, reverse: reverse}" :id="data.name">
 		<div class="above">
-			<h2 class="name">{{ data.name }}</h2>
+			<h2 class="name">{{ data.name }}<project-links :data="data" :visible="true" style="padding-left: 10px"></project-links></h2>
 			<h3 class="subtitle">{{ data.subtitle }}</h3>
 		</div>
 		<img :src="`img/${data.name.toLowerCase()}/main.png`" class="image">
 		<div class="text">
 			<img :src="`img/${data.name.toLowerCase()}/logo.svg`" class="logo">
 			<div class="beside">
-				<h2 class="name">{{ data.name }}</h2>
+				<h2 class="name">
+					<project-links :data="data" :visible="!reverse"></project-links>
+					{{ data.name }}
+					<project-links :data="data" :visible="reverse"></project-links></h2>
 				<h3 class="subtitle">{{ data.subtitle }}</h3>
 			</div>
 			<div class="description" v-html="data.description"/>
@@ -17,12 +20,17 @@
 </template>
 
 <script>
+	import ProjectLinks from '../components/ProjectLinks'
+
 export default {
 	name: 'Project',
+	components: {
+		ProjectLinks
+	},
 	props: {
 		data: Object,
 		reverse: Boolean
-	}
+	},
 }
 </script>
 
@@ -41,12 +49,13 @@ export default {
 
 .name {
 	font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	font-size: 2em;
 }
 
 .subtitle {
 	display: block;
 	color: darkgrey;
-	font-size: 0.65em;
+	font-size: 0.8em;
 }
 
 .description {

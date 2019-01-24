@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="projects">
 		<project v-for="(project, i) in projects" :key="project.name" :reverse="i % 2 === 1" :data="project"/>
 	</div>
 </template>
@@ -20,6 +20,7 @@ export default {
 				{
 					name: 'Lucrum',
 					subtitle: 'A money management and budgeting system',
+					github: 'https://github.com/j-waters/Lucrum',
 					description:
 						'Designed for personal use during university, ' +
 						'Lucrum can import bank transactions, categorising them automatically, ' +
@@ -35,26 +36,48 @@ export default {
 				{
 					name: 'Fetula',
 					subtitle: 'A self hosted photo management system',
+					github: 'https://github.com/j-waters/Fetula',
 					description:
 						'A web based photo viewing and management system, with basic editing capabilities and AI. ' +
 						'Fetula can ingest a large structured photo collection, automatically sorting and tagging each image. <br/> <br/>' +
-						'Fetula was designed to replace as a replacement to Google Photos, keeping as many of the cool AI tricks while ' +
-						'working seamlessly with a pre-existing offline photo collection. In fact, features such as object and facial recognition ' +
+						"Fetula was designed to replace as a replacement to Google Photos, keeping as many of it's cool AI tricks while " +
+						'working seamlessly with a pre-existing offline photo collection. Features such as object and facial recognition ' +
 						'are not only implemented, but are a lot more transparent and come with more options. <br/> <br/>' +
-						'The frontend was built using Vue JS, trying to mimic the look of Google Photos. The backend was written in Python using Flask.'
+						'The frontend was built using Vue JS, trying to mimic the look of Google Photos. The backend was written in Python with Flask.'
 				},
 				{
 					name: 'Multipyer',
 					subtitle: 'A multiplayer game framework and dashboard',
+					github: 'https://github.com/j-waters/Multipyer-Server',
+					website: 'http://multipyer.jamescwaters.com',
 					description:
-						'Multipyer was created for my A-Level Computer Science (and received an A* grade). ' +
+						'Multipyer was created for my A-Level Computer Science (and received an A*). ' +
 						'It was designed to allow beginner programmers to create online multiplayer games in Python and JavaScript ' +
-						'without having to write much complex code or setup their own server.<br/> <br/>' +
-						'After creating an account on the Multipyer website, developers would have access to an online console ' +
-						'to create game servers, leaderboards, and manage player accounts. Then, using the Python and JavaScript clients, ' +
+						'without having to write complex code or setup their own server.<br/> <br/>' +
+						'After creating an account on the Multipyer website, a developer would have access to an online console ' +
+						'to create game servers, leaderboards, and manage player accounts. Then, using the Python and JavaScript libraries, ' +
 						'the developer could create a working multiplayer game in as little as 3 lines of code. <br/> <br/>' +
 						'The Multipyer server was created using JavaScript and jQuery on the frontend with a Python backend. The ' +
 						'Python and JavaScript client libraries were written in their own languages.'
+				},
+				{
+					name: 'Dashboard',
+					subtitle: 'A smart home control dashboard',
+					github: 'https://github.com/j-waters/Dashboard',
+					description:
+						'An all-in-one smart light controller, clock, schedule, weather display and picture frame. <br/> <br/>' +
+						"The 'frontend' for my <a href='https://github.com/j-waters/Home-Manager'>smart home controller</a>, this site runs on a cheap wall-mounted android tablet. <br/> <br/>" +
+						"Wrriten using Vue JS."
+				},
+				{
+					name: 'Bouncr',
+					subtitle: 'An addictive Android Arcade game',
+					github: 'https://github.com/j-waters/Bouncr-Game',
+					website: 'https://play.google.com/store/apps/details?id=com.lightopa.bouncr',
+					description:
+						'A simple but addicting game, with 7 unique game modes, 16 unlockable colour schemes, 80 challenges, achievements and leaderboards.' +
+						'Advert supported, with an optional micro-transaction.<br/> <br/>' +
+						'Written in JavaScript using the Phaser JS game engine and packaged for Android with Cordova.'
 				},
 				{
 					name: 'Libellus',
@@ -69,58 +92,7 @@ export default {
 			]
 		}
 	},
-	computed: {},
-	mounted() {
-		//this.$nextTick(this.createScene)
-		this.isMounted = true
-	},
-	destroyed() {
-		// Destroy ScrollMagic when our component is removed from DOM
-		//this.$ksvuescr.$emit('destroy')
-	},
-	methods: {
-		createScene() {
-			let TweenMax = this.$gsap.TweenMax
-			let tween = new this.$gsap.TimelineMax()
-			tween.add(TweenMax.to(`#t2`, 0, { x: '-50%' }), 0)
-			tween.add(TweenMax.to(`#t1`, 50, { left: '10px', x: '0%' }), 0)
-			tween.add(TweenMax.to(`#main`, 20, { top: this.jamesRect.height }), 30)
-			tween.add(TweenMax.to(`#t2`, 10, { x: '-25%' }), 15)
-			tween.add(
-				[
-					//TweenMax.to(`.top`, 30, { rotation: '-90deg', x: '--12.6%' }),
-					TweenMax.to(`.bottom`, 30, { rotation: '-90deg', x: '-12.6%' })
-				],
-				20
-			)
-			tween.add(TweenMax.to(`#t2`, 25, { y: '-118%' }), 25)
-			tween.add(TweenMax.to(`#t2`, 15, { left: this.jamesRect.width + 30 + 'px', x: '0%' }), 35)
-
-			const scrollDuration = this.jamesRect.top
-			// create scene and set its params
-			const scene = new this.$scrollmagic.Scene({
-				offset: 0, // start scene after scrolling for 100px
-				duration: scrollDuration // pin the element for 400px of scrolling
-			})
-				//.setPin('#t1')
-				.setTween(tween)
-
-			const fix1 = new this.$scrollmagic.Scene({
-				offset: scrollDuration // start scene after scrolling for 100px
-			}).setClassToggle('#t1', 'fixed')
-
-			const fix2 = new this.$scrollmagic.Scene({
-				offset: scrollDuration // start scene after scrolling for 100px
-			}).setClassToggle('#t2', 'fixed')
-
-			// Add scene to ScrollMagic controller by emiting an 'addScene' event on vm.$ksvuescr (which is our global event bus)
-			this.$ksvuescr.$emit('addScene', 'scene', scene)
-
-			this.$ksvuescr.$emit('addScene', 'fix1', fix1)
-
-			this.$ksvuescr.$emit('addScene', 'fix2', fix2)
-		}
-	}
+	computed: {}
 }
 </script>
 
