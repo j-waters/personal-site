@@ -101,4 +101,8 @@ export default {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+
+	.projects {
+		padding: 10px;
+	}
 </style>

@@ -238,6 +238,12 @@ html {
 	box-sizing: border-box;
 }
 
+@media screen and (max-height: 375px) {
+	.main {
+		top: calc(50% - 15em);
+	}
+}
+
 @media screen and (max-width: 375px) {
 	html {
 		font-size: 8px;
@@ -308,7 +314,7 @@ html {
 	}
 
 	.links-mask.after {
-		left: 158px;
+		left: 162px;
 		transform: translateY(-110%);
 		width: 60%;
 	}

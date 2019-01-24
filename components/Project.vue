@@ -1,5 +1,5 @@
 <template>
-	<div v-scroll-reveal="{ delay: 250}" :class="{project: true, reverse: reverse}" :id="data.name">
+	<div v-scroll-reveal="{ delay: 150}" :class="{project: true, reverse: reverse}" :id="data.name">
 		<div class="above">
 			<h2 class="name">{{ data.name }}<project-links :data="data" :visible="true" style="padding-left: 10px"></project-links></h2>
 			<h3 class="subtitle">{{ data.subtitle }}</h3>
@@ -37,14 +37,16 @@ export default {
 <style scoped>
 .project {
 	display: flex;
-	margin-bottom: 20px;
+	margin-bottom: 60px;
 }
 
 .image {
 	width: 40%;
 	height: 100%;
-	margin-right: 10%;
+	margin-right: 3%;
 	flex-grow: 3;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .name {
@@ -89,7 +91,7 @@ export default {
 .reverse .image {
 	order: 1;
 	margin-right: 0;
-	margin-left: 10%;
+	margin-left: 3%;
 }
 
 .project:last-child {
@@ -100,7 +102,7 @@ export default {
 	display: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
 	.image {
 		margin-right: 0;
 		width: 100%;
