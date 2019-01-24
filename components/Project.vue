@@ -1,5 +1,5 @@
 <template>
-	<div v-scroll-reveal="{ delay: 150}" :class="{project: true, reverse: reverse}" :id="data.name">
+	<div v-scroll-reveal="{ delay: 50}" :class="{project: true, reverse: reverse}" :id="data.name">
 		<div class="above">
 			<h2 class="name">{{ data.name }}<project-links :data="data" :visible="true" style="padding-left: 10px"></project-links></h2>
 			<h3 class="subtitle">{{ data.subtitle }}</h3>
