@@ -194,15 +194,15 @@ export default {
 }
 
 .before-transition .menu a:nth-of-type(1) {
-	transition: opacity 0.4s 1.3s;
+	transition: opacity 0.5s 1.3s;
 }
 
 .before-transition .menu a:nth-of-type(2) {
-	transition: opacity 0.4s 1.5s;
+	transition: opacity 0.5s 1.55s;
 }
 
 .before-transition .menu a:nth-of-type(3) {
-	transition: opacity 0.4s 1.7s;
+	transition: opacity 0.5s 1.8s;
 }
 
 .before .menu a {

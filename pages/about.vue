@@ -1,7 +1,7 @@
 <template>
 	<div class="about">
 		<h1>Hello!</h1>
-		<p>My name is James and I'm a first year computer science student at Southampton University</p>
+		<p>My name is James and I'm a Computer Science student at Southampton University</p>
 	</div>
 </template>
 
