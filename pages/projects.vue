@@ -102,7 +102,7 @@ export default {
 }
 */
 
-	.projects {
-		padding: 10px;
-	}
+.projects {
+	scroll-snap-type: y mandatory;
+}
 </style>

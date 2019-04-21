@@ -27,7 +27,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/css/tailwind.css'
+    '~/assets/css/tofino.css'
   ],
 
   /*
@@ -39,7 +39,8 @@ module.exports = {
 		  ssr: false
 	  },
 	  { src: '~/plugins/vue-particles', ssr: false },
-	  '~/plugins/vuebar'
+	  '~/plugins/vuebar',
+	  { src: '~/plugins/motus', ssr: false}
   ],
 
   /*

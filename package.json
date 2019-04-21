@@ -17,10 +17,13 @@
 		"@nuxtjs/axios": "^5.0.0",
 		"cross-env": "^5.2.0",
 		"ks-vue-scrollmagic": "^1.0.2",
+		"mobile-device-detect": "^0.2.3",
+		"motus": "^2.0.3",
 		"nuxt": "^2.0.0",
 		"push-dir": "^0.4.1",
 		"simplebar-vue": "^0.1.1",
 		"vue-animate-scroll": "^0.1.4",
+		"vue-scroll": "^2.1.9",
 		"vue-scroll-reveal": "^1.0.11",
 		"vuebar": "0.0.20"
 	},
