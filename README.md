@@ -1,4 +1,6 @@
-# personal-site-v2
+# Personal Site
+
+The personal site of James Waters
 
 ## Project setup
 ```
