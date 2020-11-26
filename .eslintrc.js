@@ -1,25 +1,23 @@
 module.exports = {
-	root: true,
-	env: {
-		browser: true,
-		node: true
-	},
-	parserOptions: {
-		parser: 'babel-eslint'
-	},
-	extends: ['plugin:vue/recommended', 'prettier'],
-	// required to lint *.vue files
-	plugins: ['vue', 'prettier'],
-	// add your custom rules here
-	rules: {
-		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-		'prettier/prettier': 'warn',
-		'vue/max-attributes-per-line': 0,
-		"vue/html-indent": [1, 'tab'],
-		'vue/no-multi-spaces': 'warn',
-		'vue/html-self-closing': 'warn',
-		'vue/require-default-prop': 'off',
-		'vue/require-prop-types': 'off'
-	}
-}
+    root: true,
+    env: {
+        node: true
+    },
+    extends: [
+        "plugin:vue/vue3-essential",
+        "eslint:recommended",
+        "@vue/typescript/recommended",
+        "@vue/prettier",
+        "@vue/prettier/@typescript-eslint"
+    ],
+    parserOptions: {
+        ecmaVersion: 2020
+    },
+    rules: {
+        "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
+        "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+        "@typescript-eslint/camelcase": "warn",
+        "@typescript-eslint/ban-ts-ignore": "warn",
+        "vue/no-unused-components": "warn"
+    }
+};

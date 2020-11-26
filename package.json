@@ -1,43 +1,37 @@
 {
-	"name": "Personal-Site",
-	"version": "1.0.0",
-	"description": "The personal website of James Waters",
-	"author": "James",
-	"private": true,
-	"scripts": {
-		"dev": "nuxt",
-		"build": "nuxt build",
-		"start": "nuxt start",
-		"generate": "nuxt generate",
-		"lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-		"deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
-		"gendeploy": "npm run generate && sleep 1 && cp -r dist/img dist/projects/img && npm run deploy"
-	},
-	"dependencies": {
-		"@nuxtjs/axios": "^5.0.0",
-		"cross-env": "^5.2.0",
-		"ks-vue-scrollmagic": "^1.0.2",
-		"mobile-device-detect": "^0.2.3",
-		"motus": "^2.0.3",
-		"nuxt": "^2.0.0",
-		"push-dir": "^0.4.1",
-		"simplebar-vue": "^0.1.1",
-		"vue-animate-scroll": "^0.1.4",
-		"vue-scroll": "^2.1.9",
-		"vue-scroll-reveal": "^1.0.11",
-		"vuebar": "0.0.20"
-	},
-	"devDependencies": {
-		"autoprefixer": "^8.6.4",
-		"babel-eslint": "^8.2.1",
-		"eslint": "^5.0.1",
-		"eslint-config-prettier": "^3.3.0",
-		"eslint-loader": "^2.0.0",
-		"eslint-plugin-prettier": "2.6.2",
-		"eslint-plugin-vue": "^4.0.0",
-		"nodemon": "^1.11.0",
-		"prettier": "1.14.3",
-		"tailwindcss": "~0.6.6",
-		"vue-particles": "^1.0.9"
-	}
+  "name": "personal-site-v2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "tsparticles": "^1.18.11",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "particles.vue3": "^1.1.11",
+    "prettier": "^1.19.1",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.9.3"
+  }
 }
