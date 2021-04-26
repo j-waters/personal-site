@@ -16,21 +16,21 @@
         data() {
             return {
                 projects: [
-                    {
-                        name: "Lucrum",
-                        subtitle: "A money management and budgeting system",
-                        github: "https://github.com/j-waters/Lucrum",
-                        description:
-                            "Designed for personal use during university, " +
-                            "Lucrum can import bank transactions, categorising them automatically, " +
-                            "and has a clean modern interface that works on desktop and mobile.<br/> <br/>" +
-                            "Lucrum was developed to be a free yet full featured alternative to " +
-                            "other money management apps, many of which lacked student-specific " +
-                            "features like bill splitting <br/> <br/>" +
-                            "The frontend is built using Vue JS JavaScript framework, and is based on Google's " +
-                            "Material Design 2 specifications. The backend is written in Python using Flask, and can be used " +
-                            "independently from the frontend as a REST API. "
-                    },
+         //           {
+//                        name: "Lucrum",
+ //                       subtitle: "A money management and budgeting system",
+   //                     github: "https://github.com/j-waters/Lucrum",
+     //                   description:
+       //                     "Designed for personal use during university, " +
+           //                 "Lucrum can import bank transactions, categorising them automatically, " +
+             //               "and has a clean modern interface that works on desktop and mobile.<br/> <br/>" +
+               //             "Lucrum was developed to be a free yet full featured alternative to " +
+                 //           "other money management apps, many of which lacked student-specific " +
+                   //         "features like bill splitting <br/> <br/>" +
+                     //       "The frontend is built using Vue JS JavaScript framework, and is based on Google's " +
+                       //     "Material Design 2 specifications. The backend is written in Python using Flask, and can be used " +
+                         //   "independently from the frontend as a REST API. "
+                    //},
                     {
                         name: "Fetula",
                         subtitle: "A self hosted photo management system",
