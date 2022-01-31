@@ -27,205 +27,201 @@
     </div>
 </template>
 
-<script>
-    export default {
-        name: "TitleNav",
-        data() {
-            return {
-                beforeTransition: true
-            };
-        },
-        mounted() {
-            setTimeout(() => {
-                this.beforeTransition = false;
-            }, 3000);
-        }
-    };
+<script lang="ts" setup>
+import { onMounted, ref } from "vue";
+
+const beforeTransition = ref(true);
+
+onMounted(() =>
+    setTimeout(() => {
+        beforeTransition.value = false;
+    }, 3000)
+);
 </script>
 
 <style scoped lang="scss">
-    .container {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        color: #ffd700;
-        transform: translate(-50%, -50%);
-        font-family: "LT Tofino", sans-serif;
-        text-align: center;
-        transition: top, left, font-size, transform;
-        transition-duration: 2s;
-        will-change: top, left;
-        pointer-events: none;
-    }
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: #ffd700;
+    transform: translate(-50%, -50%);
+    font-family: "LT Tofino", sans-serif;
+    text-align: center;
+    transition: top, left, font-size, transform;
+    transition-duration: 2s;
+    will-change: top, left;
+    pointer-events: none;
+}
 
-    .name {
-        transform-origin: 0 0;
-        transition: transform;
-        transition-duration: 2s;
-        will-change: transform;
-    }
+.name {
+    transform-origin: 0 0;
+    transition: transform;
+    transition-duration: 2s;
+    will-change: transform;
+}
 
-    .scrolled .name {
-        transform: scale(0.6);
-    }
+.scrolled .name {
+    transform: scale(0.6);
+}
 
-    .nameleft {
-        transition: opacity, transform;
-        transition-duration: 2s;
+.nameleft {
+    transition: opacity, transform;
+    transition-duration: 2s;
+    display: inline-block;
+    will-change: opacity, transform;
+}
+
+.nameleft-wrapper {
+    overflow: hidden;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+}
+
+.firstname .nameleft-wrapper {
+    width: 2.8em;
+}
+
+.surname .nameleft-wrapper {
+    width: 3.1em;
+}
+
+.surname {
+    transition: transform;
+    transition-duration: 2s;
+    will-change: transform;
+}
+
+.mask {
+    overflow: hidden;
+}
+
+.firstname {
+    margin: 0;
+}
+
+.surname {
+    margin: 0;
+}
+
+.before-transition .firstname {
+    & .initial,
+    & .nameleft-wrapper {
         display: inline-block;
-        will-change: opacity, transform;
+        transition: transform 0.5s 0.8s;
     }
+}
 
-    .nameleft-wrapper {
-        overflow: hidden;
-        display: inline-block;
-        text-align: left;
-        vertical-align: top;
-    }
+.before .firstname .initial,
+.before .firstname .nameleft-wrapper {
+    transform: translateY(100%);
+}
 
-    .firstname .nameleft-wrapper {
-        width: 2.8em;
-    }
+.before-transition .surname .initial,
+.before-transition .surname .nameleft-wrapper {
+    display: inline-block;
+    transition: transform 0.5s 1s;
+}
 
-    .surname .nameleft-wrapper {
-        width: 3.1em;
-    }
+.before .surname .initial,
+.before .surname .nameleft-wrapper {
+    transform: translateY(-100%);
+}
 
-    .surname {
-        transition: transform;
-        transition-duration: 2s;
-        will-change: transform;
-    }
+.scrolled .container {
+    top: 0;
+    left: -0.3em;
+    transform: translate(0, 0);
+}
 
-    .mask {
-        overflow: hidden;
-    }
+.scrolled .nameleft {
+    opacity: 0;
+    transform: translateX(-100%);
+}
 
-    .firstname {
-        margin: 0;
-    }
+.name h1 {
+    font-weight: 500;
+    line-height: 0.9em;
+    font-size: 2em;
+    transition: transform, font-size;
+    transition-duration: 2s;
+    -webkit-font-smoothing: antialiased;
+}
 
-    .surname {
-        margin: 0;
-    }
+.scrolled .initial {
+    cursor: pointer;
+    pointer-events: initial;
+}
 
-    .before-transition .firstname {
-        & .initial,
-        & .nameleft-wrapper {
-            display: inline-block;
-            transition: transform 0.5s 0.8s;
-        }
-    }
+.before .divider {
+    transform: scaleX(0);
+}
 
-    .before .firstname .initial,
-    .before .firstname .nameleft-wrapper {
-        transform: translateY(100%);
-    }
+.before-transition .divider {
+    transition: transform 0.5s 0.5s;
+    transform-origin: 50%;
+}
 
-    .before-transition .surname .initial,
-    .before-transition .surname .nameleft-wrapper {
-        display: inline-block;
-        transition: transform 0.5s 1s;
-    }
+.divider {
+    height: 1.8px;
+    width: 100%;
+    background: #ffd700;
+    transition: transform;
+    transition-duration: 2s;
+    transform-origin: 100%;
+    position: absolute;
+    will-change: transform;
+    transform: scaleX(0.9999);
+}
 
-    .before .surname .initial,
-    .before .surname .nameleft-wrapper {
-        transform: translateY(-100%);
-    }
+.scrolled .divider {
+    transform: translate(-4.4em, -0.1em) rotate(90deg) scaleX(0.18);
+}
 
-    .scrolled .container {
-        top: 0;
-        left: -0.3em;
-        transform: translate(0, 0);
-    }
+.scrolled .surname {
+    transform: translate(0.8em, -0.89em);
+}
 
-    .scrolled .nameleft {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
+.menu {
+    line-height: 1em;
+    transition: transform;
+    transition-duration: 2s;
+}
 
-    .name h1 {
-        font-weight: 500;
-        line-height: 0.9em;
-        font-size: 2em;
-        transition: transform, font-size;
-        transition-duration: 2s;
-        -webkit-font-smoothing: antialiased;
-    }
+.menu a {
+    font-size: 0.5em;
+    cursor: pointer;
+    pointer-events: initial;
+}
 
-    .scrolled .initial {
-        cursor: pointer;
-        pointer-events: initial;
-    }
+.menu a:link {
+    text-decoration: inherit;
+    color: inherit;
+}
 
-    .before .divider {
-        transform: scaleX(0);
-    }
+.menu a:visited {
+    text-decoration: inherit;
+    color: inherit;
+}
 
-    .before-transition .divider {
-        transition: transform 0.5s 0.5s;
-        transform-origin: 50%;
-    }
+.before-transition .menu a:nth-of-type(1) {
+    transition: opacity 0.5s 1.3s;
+}
 
-    .divider {
-        height: 1.8px;
-        width: 100%;
-        background: #ffd700;
-        transition: transform;
-        transition-duration: 2s;
-        transform-origin: 100%;
-        position: absolute;
-        will-change: transform;
-        transform: scaleX(0.9999);
-    }
+.before-transition .menu a:nth-of-type(2) {
+    transition: opacity 0.5s 1.55s;
+}
 
-    .scrolled .divider {
-        transform: translate(-4.4em, -0.1em) rotate(90deg) scaleX(0.18);
-    }
+.before-transition .menu a:nth-of-type(3) {
+    transition: opacity 0.5s 1.8s;
+}
 
-    .scrolled .surname {
-        transform: translate(0.8em, -0.89em);
-    }
+.before .menu a {
+    opacity: 0;
+}
 
-    .menu {
-        line-height: 1em;
-        transition: transform;
-        transition-duration: 2s;
-    }
-
-    .menu a {
-        font-size: 0.5em;
-        cursor: pointer;
-        pointer-events: initial;
-    }
-
-    .menu a:link {
-        text-decoration: inherit;
-        color: inherit;
-    }
-
-    .menu a:visited {
-        text-decoration: inherit;
-        color: inherit;
-    }
-
-    .before-transition .menu a:nth-of-type(1) {
-        transition: opacity 0.5s 1.3s;
-    }
-
-    .before-transition .menu a:nth-of-type(2) {
-        transition: opacity 0.5s 1.55s;
-    }
-
-    .before-transition .menu a:nth-of-type(3) {
-        transition: opacity 0.5s 1.8s;
-    }
-
-    .before .menu a {
-        opacity: 0;
-    }
-
-    .scrolled .menu {
-        transform: translate(1.3em, -3.7em);
-    }
+.scrolled .menu {
+    transform: translate(1.3em, -3.7em);
+}
 </style>

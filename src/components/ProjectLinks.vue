@@ -19,21 +19,15 @@
     </span>
 </template>
 
-<script>
-    export default {
-        name: "ProjectLinks",
-        props: {
-            data: Object,
-            visible: Boolean
-        }
-    };
+<script lang="ts" setup>
+const props = defineProps<{ data: Record<any, any>; visible: boolean }>();
 </script>
 
 <style scoped>
-    .plink {
-        height: 0.8em;
-        opacity: 0.5;
-        line-height: 0.8em;
-        vertical-align: baseline;
-    }
+.plink {
+    height: 0.8em;
+    opacity: 0.5;
+    line-height: 0.8em;
+    vertical-align: baseline;
+}
 </style>

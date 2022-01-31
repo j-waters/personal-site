@@ -6,26 +6,22 @@
     </span>
 </template>
 
-<script>
-    export default {
-        name: "MenuItems"
-    };
-</script>
+<script lang="ts" setup></script>
 
 <style scoped>
-    a {
-        font-size: 0.5em;
-        cursor: pointer;
-        pointer-events: initial;
-    }
+a {
+    font-size: 0.5em;
+    cursor: pointer;
+    pointer-events: initial;
+}
 
-    a:link {
-        text-decoration: inherit;
-        color: inherit;
-    }
+a:link {
+    text-decoration: inherit;
+    color: inherit;
+}
 
-    a:visited {
-        text-decoration: inherit;
-        color: inherit;
-    }
+a:visited {
+    text-decoration: inherit;
+    color: inherit;
+}
 </style>

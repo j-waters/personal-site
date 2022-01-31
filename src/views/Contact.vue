@@ -9,37 +9,33 @@
     </div></template
 >
 
-<script>
-    export default {
-        name: "Contact"
-    };
-</script>
+<script lang="ts" setup></script>
 
 <style scoped>
-    a {
-        cursor: pointer;
-        pointer-events: initial;
-    }
+a {
+    cursor: pointer;
+    pointer-events: initial;
+}
 
-    a:link {
-        /*text-decoration: inherit;*/
-        color: inherit;
-    }
+a:link {
+    /*text-decoration: inherit;*/
+    color: inherit;
+}
 
-    a:visited {
-        /*text-decoration: inherit;*/
-        color: inherit;
-    }
+a:visited {
+    /*text-decoration: inherit;*/
+    color: inherit;
+}
 
-    .contact {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        flex-direction: column;
-    }
+.contact {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
 
-    h1 {
-        font-size: 3em;
-        width: 100%;
-    }
+h1 {
+    font-size: 3em;
+    width: 100%;
+}
 </style>

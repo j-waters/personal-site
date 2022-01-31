@@ -1,15 +1,9 @@
 <template>
     <div class="home">
-        <home-navigation></home-navigation>
+        <HomeNavigation />
     </div>
 </template>
 
-<script lang="ts">
-    import { defineComponent } from "vue";
-    import HomeNavigation from "@/components/HomeNavigation.vue";
-
-    export default defineComponent({
-        name: "Home",
-        components: { HomeNavigation }
-    });
+<script lang="ts" setup>
+import HomeNavigation from "@/components/HomeNavigation.vue";
 </script>

@@ -38,112 +38,102 @@
     </div>
 </template>
 
-<script>
-    import ProjectLinks from "../components/ProjectLinks";
-    import ProjectTitle from "@/components/ProjectTitle";
+<script lang="ts" setup>
+import ProjectLinks from "@/components/ProjectLinks.vue";
+import ProjectTitle from "@/components/ProjectTitle.vue";
 
-    export default {
-        name: "Project",
-        components: {
-            ProjectTitle,
-            ProjectLinks
-        },
-        props: {
-            data: Object,
-            reverse: Boolean
-        }
-    };
+const props = defineProps<{ data: Record<any, any>; reverse: boolean }>();
 </script>
 
 <style scoped>
+.project {
+    /*height: calc(100vh - 1.4em);*/
+    /*transition: opacity 0.1s;*/
+    /*scroll-snap-align: start;*/
+    /*position: sticky;*/
+    /*top: 0;*/
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    width: 50%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.text {
+    position: relative;
+    flex-grow: 1;
+    text-align: right;
+    padding: 0 2%;
+}
+
+.image img {
+    width: 100%;
+    display: block;
+}
+
+.reverse .text {
+    text-align: left;
+    order: 0;
+}
+
+.reverse .image {
+    order: 1;
+    margin-right: 0;
+    margin-left: 3%;
+}
+
+.title-above {
+    display: none;
+}
+
+@media screen and (max-width: 1080px) {
     .project {
-        /*height: calc(100vh - 1.4em);*/
-        /*transition: opacity 0.1s;*/
-        /*scroll-snap-align: start;*/
-        /*position: sticky;*/
-        /*top: 0;*/
-        display: flex;
-        align-items: center;
+        flex-flow: column;
+        position: initial;
+        scroll-snap-align: none;
+        height: fit-content;
+        margin-bottom: 3%;
+        align-items: start;
+    }
+
+    .title-above {
+        display: block;
+    }
+
+    .title-beside {
+        display: none;
     }
 
     .image {
-        width: 50%;
-        position: relative;
-        flex-shrink: 0;
-    }
-
-    .text {
-        position: relative;
-        flex-grow: 1;
-        text-align: right;
-        padding: 0 2%;
+        width: 100%;
+        height: fit-content;
+        margin: 0 !important;
+        order: 0 !important;
     }
 
     .image img {
         width: 100%;
-        display: block;
+        height: 100%;
+        transform: none;
+        top: 0;
     }
 
-    .reverse .text {
-        text-align: left;
-        order: 0;
+    .text {
+        text-align: justify;
+        width: 100%;
+        height: fit-content;
+        z-index: 1;
+        position: relative;
+        flex-grow: 2;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
-    .reverse .image {
-        order: 1;
-        margin-right: 0;
-        margin-left: 3%;
+    .description {
+        font-size: 18px;
     }
-
-    .title-above {
-        display: none;
-    }
-
-    @media screen and (max-width: 1080px) {
-        .project {
-            flex-flow: column;
-            position: initial;
-            scroll-snap-align: none;
-            height: fit-content;
-            margin-bottom: 3%;
-            align-items: start;
-        }
-
-        .title-above {
-            display: block;
-        }
-
-        .title-beside {
-            display: none;
-        }
-
-        .image {
-            width: 100%;
-            height: fit-content;
-            margin: 0 !important;
-            order: 0 !important;
-        }
-
-        .image img {
-            width: 100%;
-            height: 100%;
-            transform: none;
-            top: 0;
-        }
-
-        .text {
-            text-align: justify;
-            width: 100%;
-            height: fit-content;
-            z-index: 1;
-            position: relative;
-            flex-grow: 2;
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-
-        .description {
-            font-size: 18px;
-        }
-    }
+}
 </style>

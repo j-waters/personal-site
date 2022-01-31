@@ -9,26 +9,22 @@
     </div>
 </template>
 
-<script>
-    import ProjectLinks from "./ProjectLinks";
-    export default {
-        name: "ProjectTitle",
-        components: { ProjectLinks },
-        props: ["data", "reverse"]
-    };
+<script lang="ts" setup>
+import ProjectLinks from "@/components/ProjectLinks.vue";
+const props = defineProps<{ data: Record<any, any>; reverse: boolean }>();
 </script>
 
 <style scoped>
-    .subtitle {
-        color: darkgrey;
-        font-size: 1.5em;
-        font-style: italic;
-        margin-block-start: 0;
-        margin-block-end: 1.2em;
-    }
+.subtitle {
+    color: darkgrey;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-block-start: 0;
+    margin-block-end: 1.2em;
+}
 
-    h2 {
-        margin-block-end: 0;
-        font-size: 2em;
-    }
+h2 {
+    margin-block-end: 0;
+    font-size: 2em;
+}
 </style>

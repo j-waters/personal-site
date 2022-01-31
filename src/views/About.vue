@@ -35,65 +35,56 @@
     </div>
 </template>
 
-<script lang="ts">
-    import { defineComponent } from "vue";
-
-    export default defineComponent({
-        name: "About",
-        data() {
-            return {
-                skills: {
-                    proficient: [
-                        "JavaScript",
-                        "TypeScript",
-                        "Python",
-                        "Java",
-                        "SQL",
-                        "NestJS",
-                        "VueJS",
-                        "Angular",
-                        "Android"
-                    ],
-                    familiar: [
-                        "Haskell",
-                        "Perl",
-                        "Azure Functions",
-                        "Google Cloud",
-                        "Docker",
-                        "MongoDB"
-                    ]
-                }
-            };
-        }
-    });
+<script lang="ts" setup>
+const skills = {
+    proficient: [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Java",
+        "SQL",
+        "NestJS",
+        "VueJS",
+        "Angular",
+        "Android"
+    ],
+    familiar: [
+        "Haskell",
+        "Perl",
+        "Azure Functions",
+        "Google Cloud",
+        "Docker",
+        "MongoDB"
+    ]
+};
 </script>
 
 <style scoped lang="scss">
-    .about {
-        text-align: center;
-    }
+.about {
+    text-align: center;
+}
 
-    .skill:not(:last-child)::after {
-        content: " • ";
-    }
+.skill:not(:last-child)::after {
+    content: " • ";
+}
 
-    h4 {
-        /*margin-bottom: ;*/
-        margin-block-end: 0;
-    }
+h4 {
+    /*margin-bottom: ;*/
+    margin-block-end: 0;
+}
 
-    a {
-        cursor: pointer;
-        pointer-events: initial;
-    }
+a {
+    cursor: pointer;
+    pointer-events: initial;
+}
 
-    a:link {
-        /*text-decoration: inherit;*/
-        color: inherit;
-    }
+a:link {
+    /*text-decoration: inherit;*/
+    color: inherit;
+}
 
-    a:visited {
-        /*text-decoration: inherit;*/
-        color: inherit;
-    }
+a:visited {
+    /*text-decoration: inherit;*/
+    color: inherit;
+}
 </style>
