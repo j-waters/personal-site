@@ -1,5 +1,10 @@
 <template>
     <div class="portfolio">
+        <p>
+            A selection of my more finished projects. For more, and for my
+            open-source contributions, see my
+            <a href="https://github.com/j-waters">Github</a> account
+        </p>
         <project
             v-for="(project, i) in projects"
             :key="project.name"
@@ -97,5 +102,20 @@
 <style scoped>
     .portfolio {
         font-size: 1em;
+    }
+
+    a {
+        cursor: pointer;
+        pointer-events: initial;
+    }
+
+    a:link {
+        /*text-decoration: inherit;*/
+        color: inherit;
+    }
+
+    a:visited {
+        /*text-decoration: inherit;*/
+        color: inherit;
     }
 </style>
