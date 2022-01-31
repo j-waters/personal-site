@@ -1,465 +1,529 @@
 /* Regular */
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-Black.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 800;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-Black.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 800;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-BlackItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 800;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-BlackItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 800;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-Bold.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 700;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-Bold.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 700;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-BoldItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 700;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-BoldItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 700;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-Book.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 300;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-Book.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 300;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-BookItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 300;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-BookItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 300;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-Light.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 200;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-Light.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 200;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-LightItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 200;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-LightItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 200;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-Medium.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 500;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-Medium.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-MediumItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 500;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-MediumItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-RegularItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 400;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-RegularItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-Semibold.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 600;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-Semibold.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 600;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-SemiboldItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 600;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-SemiboldItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 600;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-Thin.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 100;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-Thin.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 100;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-ThinItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 100;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-ThinItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 100;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-Ultra.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 900;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-Ultra.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 900;
 }
 
 @font-face {
-  font-family: "LT Tofino";
-  src: url('../fonts/Tofino/regular/TofinoProPersonal-UltraItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 900;
+    font-family: "LT Tofino";
+    src: url("../fonts/Tofino/regular/TofinoProPersonal-UltraItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 900;
 }
 
 /* Text */
 
 @font-face {
-	font-family: "LT Tofino Text";
-	src: url('../fonts/Tofino/text/TofinoProPersonalText-Bold.woff2') format('woff2');
-	font-style: normal;
-	font-weight: 700;
+    font-family: "LT Tofino Text";
+    src: url("../fonts/Tofino/text/TofinoProPersonalText-Bold.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 700;
 }
 
 @font-face {
-	font-family: "LT Tofino Text";
-	src: url('../fonts/Tofino/text/TofinoProPersonalText-Regular.woff2') format('woff2');
-	font-style: normal;
-	font-weight: 400;
+    font-family: "LT Tofino Text";
+    src: url("../fonts/Tofino/text/TofinoProPersonalText-Regular.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 400;
 }
 
 @font-face {
-	font-family: "LT Tofino Text";
-	src: url('../fonts/Tofino/text/TofinoProPersonalText-RegularItalic.woff2') format('woff2');
-	font-style: italic;
-	font-weight: 400;
+    font-family: "LT Tofino Text";
+    src: url("../fonts/Tofino/text/TofinoProPersonalText-RegularItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 400;
 }
-
 
 /* Cond */
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-Bold.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 700;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-Bold.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 700;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-BoldItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 700;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-BoldItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 700;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-Book.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 300;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-Book.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 300;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-BookItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 300;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-BookItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 300;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-Light.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 200;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-Light.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 200;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-LightItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 200;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-LightItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 200;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-Medium.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 500;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-Medium.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-MediumItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 500;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-MediumItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-RegularItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 400;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-RegularItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-Semibold.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 600;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-Semibold.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 600;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-SemiboldItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 600;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-SemiboldItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 600;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-Thin.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 100;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-Thin.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 100;
 }
 
 @font-face {
-  font-family: "LT Tofino Condensed";
-  src: url('../fonts/Tofino/cond/TofinoProPersonalCond-ThinItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 100;
+    font-family: "LT Tofino Condensed";
+    src: url("../fonts/Tofino/cond/TofinoProPersonalCond-ThinItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 100;
 }
 
 /* Narrow */
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-Black.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 800;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-Black.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 800;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-BlackItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 800;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-BlackItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 800;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-Bold.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 700;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-Bold.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 700;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-BoldItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 700;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-BoldItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 700;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-Book.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 300;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-Book.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 300;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-BookItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 300;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-BookItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 300;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-Light.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 200;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-Light.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 200;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-LightItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 200;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-LightItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 200;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-Medium.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 500;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-Medium.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-MediumItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 500;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-MediumItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-RegularItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 400;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-RegularItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-Semibold.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 600;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-Semibold.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 600;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-SemiboldItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 600;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-SemiboldItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 600;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-Thin.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 100;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-Thin.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 100;
 }
 
 @font-face {
-  font-family: "LT Tofino Narrow";
-  src: url('../fonts/Tofino/narrow/TofinoProPersonalNarrow-ThinItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 100;
+    font-family: "LT Tofino Narrow";
+    src: url("../fonts/Tofino/narrow/TofinoProPersonalNarrow-ThinItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 100;
 }
 
 /* Wide */
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-Black.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 800;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-Black.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 800;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-BlackItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 800;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-BlackItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 800;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-Bold.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 700;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-Bold.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 700;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-BoldItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 700;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-BoldItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 700;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-Book.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 300;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-Book.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 300;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-BookItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 300;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-BookItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 300;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-Light.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 200;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-Light.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 200;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-LightItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 200;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-LightItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 200;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-Medium.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 500;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-Medium.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-MediumItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 500;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-MediumItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-RegularItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 400;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-RegularItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-Semibold.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 600;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-Semibold.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 600;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-SemiboldItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 600;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-SemiboldItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 600;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-Thin.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 100;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-Thin.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 100;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-ThinItalic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 100;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-ThinItalic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 100;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-Ultra.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 900;
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-Ultra.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 900;
 }
 
 @font-face {
-  font-family: "LT Tofino Wide";
-  src: url('../fonts/Tofino/wide/TofinoProPersonalWide-UltraItalic.woff2') format('woff2');
+    font-family: "LT Tofino Wide";
+    src: url("../fonts/Tofino/wide/TofinoProPersonalWide-UltraItalic.woff2")
+        format("woff2");
     font-style: italic;
     font-weight: 900;
 }
