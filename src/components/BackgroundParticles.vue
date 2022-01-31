@@ -3,9 +3,9 @@
 </template>
 
 <script lang="ts" setup>
-import { IOptions } from "tsparticles";
+import { IOptions, RecursivePartial } from "tsparticles";
 
-const options: IOptions = {
+const options: RecursivePartial<IOptions> = {
     fpsLimit: 60,
     particles: {
         color: {
