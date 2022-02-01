@@ -1,5 +1,5 @@
 <template>
-    <span v-for="item in items" :key="item.route">
+    <span v-for="item in menuItems" :key="item.route">
         <router-link
             :to="item.route"
             class="hover-underline-animation"
@@ -10,13 +10,9 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{ extraClass?: string }>();
+import menuItems from "@/data/menuItems";
 
-const items = [
-    { title: "About", route: "about" },
-    { title: "Portfolio", route: "portfolio" },
-    { title: "Contact", route: "contact" },
-];
+defineProps<{ extraClass?: string }>();
 </script>
 
 <style lang="scss" scoped>

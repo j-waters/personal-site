@@ -21,7 +21,6 @@
             </div>
         </div>
     </nav>
-    <div class="is-primary" style="height: 5px; width: 100%"></div>
 </template>
 
 <script lang="ts" setup>

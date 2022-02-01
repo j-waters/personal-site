@@ -6,13 +6,24 @@
     >
         <div class="container" v-if="notHome">
             <TopNavigation />
-            <section class="hero is-fullheight-with-navbar">
-                <div class="hero-body">
-                    <div class="box">
-                        <router-view />
-                    </div>
-                </div>
-            </section>
+            <router-view v-slot="{ Component, route }">
+                <transition
+                    :name="horizontalTransition"
+                    @before-enter="toggleBodyScroll(true)"
+                    @after-enter="toggleBodyScroll(false)"
+                >
+                    <section
+                        class="hero is-fullheight-with-navbar"
+                        :key="route.path"
+                    >
+                        <div class="hero-body p-0">
+                            <div class="box">
+                                <component :is="Component" />
+                            </div>
+                        </div>
+                    </section>
+                </transition>
+            </router-view>
         </div>
         <div v-else>
             <router-view />
@@ -25,6 +36,7 @@ import { computed, nextTick, ref, watch } from "vue";
 import { onBeforeRouteUpdate, useRoute } from "vue-router";
 import BackgroundParticles from "@/components/BackgroundParticles.vue";
 import TopNavigation from "@/components/TopNavigation.vue";
+import menuItems from "@/data/menuItems";
 
 const route = useRoute();
 
@@ -36,12 +48,31 @@ const verticalTransition = computed(() =>
         : "slide-up"
 );
 
-const navigations = ref(0);
-const isFirstNavigation = computed(() => navigations.value <= 1);
+const isFirstNavigation = ref(true);
 
-watch(route, () => {
-    navigations.value += 1;
-});
+const horizontalTransition = ref("");
+
+watch(
+    () => ({
+        ...route,
+    }),
+    (to, from) => {
+        if (from.name != undefined) {
+            isFirstNavigation.value = false;
+        }
+
+        const fromIndex = menuItems.findIndex(
+            (value) => value.route == from.path
+        );
+        const toIndex = menuItems.findIndex((value) => value.route == to.path);
+        console.log(fromIndex, toIndex);
+        if (fromIndex > toIndex) {
+            horizontalTransition.value = "slide-right";
+        } else {
+            horizontalTransition.value = "slide-left";
+        }
+    }
+);
 
 const notHome = computed(() => route.name && route.name !== "Home");
 
@@ -60,7 +91,11 @@ body {
 </style>
 
 <style lang="scss" scoped>
-@each $direction in ("left", "right", "up", "down") {
+.box {
+    width: 100%;
+}
+
+@each $direction in ("up", "down") {
     .slide-#{$direction}-leave-active,
     .slide-#{$direction}-enter-active {
         transition: 1s;
@@ -72,6 +107,15 @@ body {
     }
 }
 
+@each $direction in ("left", "right") {
+    .slide-#{$direction}-leave-active,
+    .slide-#{$direction}-enter-active {
+        transition: 1s;
+        position: absolute;
+        width: 100%;
+    }
+}
+
 .slide-up-enter-from,
 .slide-down-leave-to {
     transform: translateY(100%);
@@ -79,6 +123,15 @@ body {
 .slide-up-leave-to,
 .slide-down-enter-from {
     transform: translateY(-100%);
+}
+
+.slide-left-enter-from,
+.slide-right-leave-to {
+    transform: translateX(100vw);
+}
+.slide-left-leave-to,
+.slide-right-enter-from {
+    transform: translateX(-100vw);
 }
 
 .fade-enter-active,
