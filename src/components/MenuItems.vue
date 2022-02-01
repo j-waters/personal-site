@@ -1,11 +1,8 @@
 <template>
-    <span v-for="item in menuItems" :key="item.route">
-        <router-link
-            :to="item.route"
-            class="hover-underline-animation"
-            :class="extraClass"
-            >{{ item.title }}</router-link
-        >
+    <span v-for="item in menuItems" :key="item.route" :class="extraClass">
+        <router-link :to="item.route" class="hover-underline-animation">{{
+            item.title
+        }}</router-link>
     </span>
 </template>
 

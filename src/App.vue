@@ -78,15 +78,20 @@ const notHome = computed(() => route.name && route.name !== "Home");
 
 function toggleBodyScroll(disabled: boolean) {
     const body = document.querySelector("html");
-    if (body) body.style.overflowY = disabled ? "hidden" : "auto";
+    if (body) body.style.overflowY = disabled ? "hidden" : "overlay";
 }
 </script>
 
 <style lang="scss">
+@import "style/mixins";
 body {
     margin: 0;
     min-height: 100vh;
     background-color: rgba(2, 0, 36, 1);
+}
+
+html {
+    @include scrollbars();
 }
 </style>
 

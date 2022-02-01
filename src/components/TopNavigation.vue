@@ -4,20 +4,15 @@
         role="navigation"
         aria-label="main navigation"
     >
-        <div class="container">
-            <div class="navbar-brand is-align-items-center">
-                <router-link to="/">
-                    <span
-                        class="navbar-item initials is-size-4 has-text-primary draw-border"
-                        >JW</span
-                    >
-                </router-link>
-            </div>
+        <div class="navbar-brand is-align-items-center">
+            <router-link to="/" class="navbar-item draw-border">
+                <span class="initials is-size-3 has-text-primary">JW</span>
+            </router-link>
+        </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-end is-align-items-center">
-                    <MenuItems extra-class="navbar-item" />
-                </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end is-align-items-center">
+                <MenuItems extra-class="navbar-item" />
             </div>
         </div>
     </nav>
