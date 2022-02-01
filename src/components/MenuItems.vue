@@ -1,27 +1,43 @@
 <template>
-    <span>
-        <router-link to="about">About</router-link>&thinsp;
-        <router-link to="portfolio">Portfolio</router-link>&thinsp;
-        <router-link to="contact">Contact</router-link>
-    </span>
+    <router-link
+        v-for="item in items"
+        :to="item.route"
+        :key="item.route"
+        class="is-size-3"
+        :class="extraClass"
+        >{{ item.title }}</router-link
+    >
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const props = defineProps<{ extraClass?: string }>();
 
-<style scoped>
+const items = [
+    { title: "About", route: "about" },
+    { title: "Portfolio", route: "portfolio" },
+    { title: "Contact", route: "contact" },
+];
+</script>
+
+<style lang="scss" scoped>
 a {
-    font-size: 0.5em;
     cursor: pointer;
     pointer-events: initial;
-}
+    transition: transform 0.2s;
+    display: inline-block;
 
-a:link {
-    text-decoration: inherit;
-    color: inherit;
-}
+    &:link {
+        text-decoration: inherit;
+        color: inherit;
+    }
 
-a:visited {
-    text-decoration: inherit;
-    color: inherit;
+    &:visited {
+        text-decoration: inherit;
+        color: inherit;
+    }
+
+    &:hover {
+        transform: scale(1.025);
+    }
 }
 </style>

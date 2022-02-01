@@ -9,45 +9,45 @@ const options: RecursivePartial<IOptions> = {
     fpsLimit: 60,
     particles: {
         color: {
-            value: "#F1BF98"
+            value: "#F1BF98",
         },
         links: {
             color: "#F1BF98",
             distance: 150,
             enable: true,
-            opacity: 0.4,
-            width: 0.5
+            opacity: 0.2,
+            width: 0.5,
         },
         collisions: {
-            enable: true
+            enable: true,
         },
         move: {
             direction: "none",
             enable: true,
             outMode: "bounce",
             random: false,
-            speed: 0.4,
-            straight: false
+            speed: 0.05,
+            straight: false,
         },
         number: {
             density: {
                 enable: true,
-                value_area: 800
+                value_area: 800,
             },
-            value: 150
+            value: 150,
         },
         opacity: {
-            value: 0.7
+            value: 0.5,
         },
         shape: {
-            type: "circle"
+            type: "circle",
         },
         size: {
             random: true,
-            value: 2
-        }
+            value: 2,
+        },
     },
-    detectRetina: true
+    detectRetina: true,
 };
 </script>
 

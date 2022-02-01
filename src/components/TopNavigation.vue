@@ -1,16 +1,37 @@
 <template>
-    <div id="top-nav">
-        <router-link to="/"><span id="initials">JW</span></router-link>
-        <span id="vertical-divider" />
-        <MenuItems id="menu" />
-    </div>
+    <nav
+        class="navbar is-transparent is-size-3"
+        role="navigation"
+        aria-label="main navigation"
+    >
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <router-link to="/"
+                    ><span class="initials">JW</span></router-link
+                >
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+                <MenuItems :extra-class="'navbar-item'" />
+            </div>
+        </div>
+    </nav>
 </template>
 
 <script lang="ts" setup>
 import MenuItems from "@/components/MenuItems.vue";
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.is-transparent {
+    background-color: transparent;
+}
+
+.navbar {
+    color: #ffd700;
+}
 #top-nav {
     font-family: "LT Tofino", sans-serif;
     color: #ffd700;

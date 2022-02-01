@@ -4,7 +4,7 @@ import router from "./router";
 // @ts-ignore
 import Particles from "particles.vue3";
 
-import "./style.scss";
+import "@/style.scss";
 
 createApp(App)
     .use(router)
