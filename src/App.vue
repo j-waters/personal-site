@@ -2,8 +2,17 @@
     <div id="root" :class="{ before }">
         <BackgroundParticles />
         <div class="container">
-            <TopNavigation v-if="notHome" />
-            <router-view />
+            <template v-if="notHome">
+                <TopNavigation />
+                <section class="hero is-fullheight-with-navbar">
+                    <div class="hero-body">
+                        <div class="box">
+                            <router-view />
+                        </div>
+                    </div>
+                </section>
+            </template>
+            <router-view v-else />
         </div>
     </div>
 </template>
@@ -18,7 +27,7 @@ const before = ref(false);
 
 const route = useRoute();
 
-const stopWatch = watch(route, route => {
+const stopWatch = watch(route, (route) => {
     if (route.name == "Home") {
         nextTick(() => (before.value = false));
     } else {
@@ -44,6 +53,7 @@ body {
     background: linear-gradient(rgba(46, 64, 87, 1) 0%, rgba(2, 0, 36, 1) 80%);
     opacity: 1;
     transition: opacity 1.5s;
+    min-height: 100vh;
 
     &.before {
         opacity: 0;

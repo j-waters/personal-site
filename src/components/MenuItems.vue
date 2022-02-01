@@ -3,7 +3,6 @@
         v-for="item in items"
         :to="item.route"
         :key="item.route"
-        class="is-size-3"
         :class="extraClass"
         >{{ item.title }}</router-link
     >
@@ -20,6 +19,8 @@ const items = [
 </script>
 
 <style lang="scss" scoped>
+@import "~@/colours.scss";
+
 a {
     cursor: pointer;
     pointer-events: initial;
@@ -38,6 +39,7 @@ a {
 
     &:hover {
         transform: scale(1.025);
+        color: $menu-hover;
     }
 }
 </style>

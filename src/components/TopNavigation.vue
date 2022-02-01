@@ -1,15 +1,15 @@
 <template>
     <nav
-        class="navbar is-transparent is-size-3"
+        class="navbar is-transparent is-size-5 has-text-primary"
         role="navigation"
         aria-label="main navigation"
     >
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <router-link to="/"
-                    ><span class="initials">JW</span></router-link
+            <router-link to="/">
+                <span class="navbar-item initials is-size-4 has-text-primary"
+                    >JW</span
                 >
-            </a>
+            </router-link>
         </div>
 
         <div id="navbarBasicExample" class="navbar-menu">
@@ -29,9 +29,6 @@ import MenuItems from "@/components/MenuItems.vue";
     background-color: transparent;
 }
 
-.navbar {
-    color: #ffd700;
-}
 #top-nav {
     font-family: "LT Tofino", sans-serif;
     color: #ffd700;

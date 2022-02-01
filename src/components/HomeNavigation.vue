@@ -9,7 +9,7 @@
                 <div class="second-name">WATERS</div>
             </div>
         </div>
-        <div class="menu is-flex is-justify-content-space-evenly">
+        <div class="menu is-flex is-justify-content-space-evenly is-size-3">
             <menu-items />
         </div>
     </div>
