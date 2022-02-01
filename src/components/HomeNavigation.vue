@@ -86,12 +86,12 @@ onMounted(() => setTimeout(() => (hidden.value = false), 500));
 }
 
 .menu {
-    line-height: 1;
-    .hidden & ::v-deep a {
+    line-height: 1.5;
+    .hidden & ::v-deep span {
         opacity: 0;
     }
     @for $i from 1 through 3 {
-        ::v-deep a:nth-child(#{$i}) {
+        ::v-deep span:nth-child(#{$i}) {
             transition: opacity 0.5s #{0.55 + $i * 0.25}s ease-in,
                 transform 0.2s;
         }

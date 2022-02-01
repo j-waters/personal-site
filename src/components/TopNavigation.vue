@@ -4,20 +4,24 @@
         role="navigation"
         aria-label="main navigation"
     >
-        <div class="navbar-brand">
-            <router-link to="/">
-                <span class="navbar-item initials is-size-4 has-text-primary"
-                    >JW</span
-                >
-            </router-link>
-        </div>
+        <div class="container">
+            <div class="navbar-brand is-align-items-center">
+                <router-link to="/">
+                    <span
+                        class="navbar-item initials is-size-4 has-text-primary draw-border"
+                        >JW</span
+                    >
+                </router-link>
+            </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-end">
-                <MenuItems :extra-class="'navbar-item'" />
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end is-align-items-center">
+                    <MenuItems extra-class="navbar-item" />
+                </div>
             </div>
         </div>
     </nav>
+    <div class="is-primary" style="height: 5px; width: 100%"></div>
 </template>
 
 <script lang="ts" setup>
@@ -25,6 +29,9 @@ import MenuItems from "@/components/MenuItems.vue";
 </script>
 
 <style lang="scss" scoped>
+@import "~@/style/mixins.scss";
+@import "~@/colours.scss";
+
 .is-transparent {
     background-color: transparent;
 }
@@ -71,5 +78,13 @@ a:link {
 a:visited {
     text-decoration: inherit;
     color: inherit;
+}
+
+.navbar-item {
+    line-height: 1;
+}
+
+.draw-border {
+    @include btn-border-drawing(transparent, $primary, 2px, bottom, right);
 }
 </style>

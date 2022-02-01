@@ -1,11 +1,12 @@
 <template>
-    <router-link
-        v-for="item in items"
-        :to="item.route"
-        :key="item.route"
-        :class="extraClass"
-        >{{ item.title }}</router-link
-    >
+    <span v-for="item in items" :key="item.route">
+        <router-link
+            :to="item.route"
+            class="hover-underline-animation"
+            :class="extraClass"
+            >{{ item.title }}</router-link
+        >
+    </span>
 </template>
 
 <script lang="ts" setup>
@@ -20,12 +21,15 @@ const items = [
 
 <style lang="scss" scoped>
 @import "~@/colours.scss";
+@import "~@/style/mixins.scss";
 
 a {
     cursor: pointer;
     pointer-events: initial;
     transition: transform 0.2s;
     display: inline-block;
+
+    @include hover-underline-animation($primary);
 
     &:link {
         text-decoration: inherit;
@@ -37,9 +41,8 @@ a {
         color: inherit;
     }
 
-    &:hover {
-        transform: scale(1.025);
-        color: $menu-hover;
+    &.router-link-active {
+        font-weight: bold;
     }
 }
 </style>

@@ -55,6 +55,6 @@ const options: RecursivePartial<IOptions> = {
 #particles {
     width: 100%;
     height: 100%;
-    position: absolute;
+    /*position: absolute;*/
 }
 </style>
