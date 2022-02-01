@@ -1,11 +1,13 @@
-// const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
     configureWebpack: {
         plugins: [
-            // new FaviconsWebpackPlugin({
-            //     logo: "src/assets/logo.svg",
-            // }),
+            new FaviconsWebpackPlugin({
+                logo: "./src/assets/logo.svg",
+                inject: true,
+                mode: "webapp",
+            }),
         ],
     },
 };
