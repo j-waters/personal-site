@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="234.198" y1="63.77" x2="234.198" y2="271.445" id="gradient-0" gradientTransform="matrix(2.407608, 0, 0, 2.407608, -313.858411, -153.533981)">
+      <stop offset="0" style="stop-color: rgb(46, 64, 87);"/>
+      <stop offset="0.728" style="stop-color: rgb(24, 34, 46);"/>
+      <stop offset="1" style=""/>
+    </linearGradient>
+    <linearGradient id="color-0" bx:pinned="true">
+      <title>blue</title>
+      <stop style="stop-color: rgb(46, 64, 87);"/>
+    </linearGradient>
+    <linearGradient id="color-1" bx:pinned="true">
+      <stop style="stop-color: rgb(0, 0, 0);"/>
+    </linearGradient>
+    <style bx:fonts="Roboto">@import url(https://fonts.googleapis.com/css2?family=Roboto%3Aital%2Cwght%400%2C100%3B0%2C300%3B0%2C400%3B0%2C500%3B0%2C700%3B0%2C900%3B1%2C100%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C700%3B1%2C900&amp;display=swap);</style>
+  </defs>
+  <rect width="500" height="500" style="fill: url(#gradient-0); fill-rule: nonzero; paint-order: fill;"/>
+  <text style="fill: rgb(255, 215, 0); font-family: Roboto; font-size: 15.8px; white-space: pre;" transform="matrix(18.728745, 0, 0, 24.765556, -8894.027344, -3445.77124)" x="476.867" y="154.628">JW</text>
+</svg>
