@@ -13,4 +13,4 @@ Lucrum was developed to be a free yet full featured alternative to other money m
 student-specific features like bill splitting.
 
 The frontend is built using Vue JS JavaScript framework, and is based on Google's Material Design 2 specifications. The
-backend is written in Python using Flask, and can be used independently from the frontend as a REST API. 
+backend is written in Python using Flask, and can be used independently from the frontend as a REST API.

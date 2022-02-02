@@ -7,7 +7,7 @@ tags: ["python", "school", "jquery", "web"]
 date: 2017-01-01
 ---
 
-Multipyer was created for my A-Level Computer Science coursework (and received an A*). It was designed to allow beginner
+Multipyer was created for my A-Level Computer Science coursework (and received an A\*). It was designed to allow beginner
 programmers to create online multiplayer games in Python and JavaScript without having to write complex code or set up
 their own server.
 

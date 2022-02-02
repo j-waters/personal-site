@@ -1,6 +1,8 @@
+const { defineConfig } = require('@vue/cli-service')
+
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
-module.exports = {
+module.exports = defineConfig({
     configureWebpack: {
         plugins: [
             new FaviconsWebpackPlugin({
@@ -18,4 +20,4 @@ module.exports = {
             ],
         },
     },
-};
+});

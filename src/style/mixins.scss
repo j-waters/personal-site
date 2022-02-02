@@ -1,113 +1,112 @@
 @use "sass:math";
 
-
 @mixin btn-border-drawing(
-  $color: #ccc,
-  $hover: black,
-  $width: 2px,
-  $vertical: top,
-  $horizontal: left,
-  $duration: 0.25s
+    $color: #ccc,
+    $hover: black,
+    $width: 2px,
+    $vertical: top,
+    $horizontal: left,
+    $duration: 0.25s
 ) {
-  box-shadow: inset 0 0 0 $width $color;
-  color: $color;
-  transition: color $duration math.div($duration, 3);
-  position: relative;
-
-  &::before,
-  &::after {
-    border: 0 solid transparent;
-    box-sizing: border-box;
-    content: "";
-    pointer-events: none;
-    position: absolute;
-    width: 0;
-    height: 0;
-
-    #{$vertical}: 0;
-    #{$horizontal}: 0;
-  }
-
-  &::before {
-    $h-side: if($horizontal == "left", "right", "left");
-
-    border-#{$vertical}-width: $width;
-    border-#{$h-side}-width: $width;
-  }
-
-  &::after {
-    $v-side: if($vertical == "top", "bottom", "top");
-
-    border-#{$v-side}-width: $width;
-    border-#{$horizontal}-width: $width;
-  }
-
-  &:hover {
-    color: $hover;
+    box-shadow: inset 0 0 0 $width $color;
+    color: $color;
+    transition: color $duration math.div($duration, 3);
+    position: relative;
 
     &::before,
     &::after {
-      border-color: $hover;
-      transition: border-color 0s, width $duration, height $duration;
-      width: 100%;
-      height: 100%;
+        border: 0 solid transparent;
+        box-sizing: border-box;
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        width: 0;
+        height: 0;
+
+        #{$vertical}: 0;
+        #{$horizontal}: 0;
     }
 
     &::before {
-      transition-delay: 0s, 0s, $duration;
+        $h-side: if($horizontal == "left", "right", "left");
+
+        border-#{$vertical}-width: $width;
+        border-#{$h-side}-width: $width;
     }
 
     &::after {
-      transition-delay: 0s, $duration, 0s;
+        $v-side: if($vertical == "top", "bottom", "top");
+
+        border-#{$v-side}-width: $width;
+        border-#{$horizontal}-width: $width;
     }
-  }
+
+    &:hover {
+        color: $hover;
+
+        &::before,
+        &::after {
+            border-color: $hover;
+            transition: border-color 0s, width $duration, height $duration;
+            width: 100%;
+            height: 100%;
+        }
+
+        &::before {
+            transition-delay: 0s, 0s, $duration;
+        }
+
+        &::after {
+            transition-delay: 0s, $duration, 0s;
+        }
+    }
 }
 
 @mixin hover-underline-animation(
-  $colour: black,
-  $width: 2px,
-  $entry-origin: bottom center,
-  $exit-origin: bottom center,
-  $duration: 0.25s,
+    $colour: black,
+    $width: 2px,
+    $entry-origin: bottom center,
+    $exit-origin: bottom center,
+    $duration: 0.25s
 ) {
-  position: relative;
+    position: relative;
 
-  &:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: $colour;
-    transform-origin: $entry-origin;
-    transition: transform $duration ease-out;
-  }
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $colour;
+        transform-origin: $entry-origin;
+        transition: transform $duration ease-out;
+    }
 
-  &:hover:after {
-    transform: scaleX(1);
-    transform-origin: $exit-origin;
-  }
+    &:hover:after {
+        transform: scaleX(1);
+        transform-origin: $exit-origin;
+    }
 }
 
 @mixin scrollbars(
-  $size: 10px,
-  $foreground-color: #999,
-  $background-color: #333
+    $size: 10px,
+    $foreground-color: #999,
+    $background-color: #333
 ) {
-  // For Chrome & Safari
-  &::-webkit-scrollbar {
-    width: $size;
-    height: $size;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $foreground-color;
-  }
-  &::-webkit-scrollbar-track {
-    background: $background-color;
-  }
+    // For Chrome & Safari
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+    }
+    &::-webkit-scrollbar-track {
+        background: $background-color;
+    }
 
-  // Standard version (Firefox only for now)
-  scrollbar-color: $foreground-color $background-color;
+    // Standard version (Firefox only for now)
+    scrollbar-color: $foreground-color $background-color;
 }
