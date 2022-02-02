@@ -5,6 +5,6 @@ export interface MenuItem {
 
 export default [
     { title: "About", route: "/about" },
-    { title: "Portfolio", route: "/portfolio" },
+    { title: "Projects", route: "/projects" },
     { title: "Contact", route: "/contact" },
 ] as MenuItem[];

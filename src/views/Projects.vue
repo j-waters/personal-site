@@ -1,5 +1,5 @@
 <template>
-    <div class="portfolio">
+    <div class="projects">
         <p class="block">
             A selection of the projects I've worked on over the years. Filter by
             technology

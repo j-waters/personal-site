@@ -14,10 +14,10 @@ const routes: Array<RouteRecordRaw> = [
             import(/* webpackChunkName: "about" */ "@/views/About.vue"),
     },
     {
-        path: "/portfolio",
-        name: "Portfolio",
+        path: "/projects",
+        name: "Projects",
         component: () =>
-            import(/* webpackChunkName: "portfolio" */ "@/views/Portfolio.vue"),
+            import(/* webpackChunkName: "projects" */ "@/views/Projects.vue"),
         meta: {
             fullHeight: true,
         },

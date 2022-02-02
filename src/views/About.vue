@@ -13,7 +13,7 @@
             for a year
         </p>
         <p>
-            See my <router-link to="/portfolio">portfolio</router-link> or my
+            See my <router-link to="/projects">projects</router-link> or my
             <a href="https://github.com/j-waters">Github</a>
             to see most of my personal projects and some of my coursework
         </p>
