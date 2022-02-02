@@ -9,5 +9,13 @@ module.exports = {
                 mode: "webapp",
             }),
         ],
+        module: {
+            rules: [
+                {
+                    test: /\.md$/,
+                    type: "asset/source",
+                },
+            ],
+        },
     },
 };

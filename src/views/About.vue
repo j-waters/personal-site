@@ -46,7 +46,7 @@ const skills = {
         "NestJS",
         "VueJS",
         "Angular",
-        "Android"
+        "Android",
     ],
     familiar: [
         "Haskell",
@@ -54,8 +54,8 @@ const skills = {
         "Azure Functions",
         "Google Cloud",
         "Docker",
-        "MongoDB"
-    ]
+        "MongoDB",
+    ],
 };
 </script>
 

@@ -10,12 +10,22 @@
   "dependencies": {
     "bulma": "^0.9.3",
     "core-js": "^3.6.5",
+    "js-yaml": "^4.1.0",
+    "path-list-to-tree": "^1.1.1",
+    "pinia": "^2.0.0-rc.4",
+    "remark": "^14.0.2",
+    "remark-extract-frontmatter": "^3.2.0",
+    "remark-frontmatter": "^4.0.1",
+    "remark-gfm": "^3.0.1",
+    "remark-html": "^15.0.1",
     "tsparticles": "^1.18.11",
     "vue": "^3.0.0",
+    "vue-multiselect": "^3.0.0-alpha.2",
     "vue-router": "^4.0.0-0",
     "yarn": "^1.22.10"
   },
   "devDependencies": {
+    "@types/js-yaml": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-babel": "~5.0.0-rc.2",
@@ -36,6 +46,7 @@
     "prettier": "^2.5.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "typescript": "~4.1.5"
+    "typescript": "~4.1.5",
+    "vue-cli-plugin-pinia": "~0.0.6"
   }
 }

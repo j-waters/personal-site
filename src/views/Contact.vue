@@ -6,8 +6,8 @@
                 <a href="mailto:james@jcwaters.co.uk">james@jcwaters.co.uk</a>
             </h1>
         </div>
-    </div></template
->
+    </div>
+</template>
 
 <script lang="ts" setup></script>
 

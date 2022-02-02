@@ -16,7 +16,12 @@
                         class="hero is-fullheight-with-navbar"
                         :key="route.path"
                     >
-                        <div class="hero-body p-0">
+                        <div
+                            class="hero-body p-0"
+                            :class="{
+                                'page-fullheight': route.meta.fullHeight,
+                            }"
+                        >
                             <div class="box">
                                 <component :is="Component" />
                             </div>
@@ -96,6 +101,13 @@ html {
 </style>
 
 <style lang="scss" scoped>
+.page-fullheight {
+    align-items: flex-start !important;
+    .box {
+        min-height: calc(100vh - #{3.25rem + 1.5rem});
+    }
+}
+
 .box {
     width: 100%;
 }

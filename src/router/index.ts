@@ -1,35 +1,38 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Home from "@/views/Home.vue";
-import About from "@/views/About.vue";
-import Portfolio from "@/views/Portfolio.vue";
-import Contact from "@/views/Contact.vue";
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: "/",
         name: "Home",
-        component: Home
+        component: () =>
+            import(/* webpackChunkName: "home" */ "@/views/Home.vue"),
     },
     {
         path: "/about",
         name: "About",
-        component: About
+        component: () =>
+            import(/* webpackChunkName: "about" */ "@/views/About.vue"),
     },
     {
         path: "/portfolio",
         name: "Portfolio",
-        component: Portfolio
+        component: () =>
+            import(/* webpackChunkName: "portfolio" */ "@/views/Portfolio.vue"),
+        meta: {
+            fullHeight: true,
+        },
     },
     {
         path: "/contact",
         name: "Contact",
-        component: Contact
-    }
+        component: () =>
+            import(/* webpackChunkName: "contact" */ "@/views/Contact.vue"),
+    },
 ];
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
-    routes
+    routes,
 });
 
 export default router;
