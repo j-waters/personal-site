@@ -25,7 +25,7 @@
                     project.date.getFullYear()
                 }}</time>
                 <div class="tags">
-                    <Tag
+                    <TagComponent
                         v-for="tagId in project.tags"
                         :key="tagId"
                         :tag-id="tagId"
@@ -39,7 +39,7 @@
 <script lang="ts" setup>
 import ProjectLinks from "@/components/ProjectLinks.vue";
 import ProjectTitle from "@/components/ProjectTitle.vue";
-import Tag from "@/components/Tag.vue";
+import TagComponent from "@/components/TagComponent.vue";
 import { ProjectItem } from "@/store/projects";
 
 const props = defineProps<{ project: ProjectItem }>();
