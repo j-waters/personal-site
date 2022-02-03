@@ -47,6 +47,7 @@
                         :href="project.github"
                         class="button"
                         target="_blank"
+                        @click.stop
                     >
                         <span class="icon-text">
                             <span class="icon">
@@ -64,6 +65,7 @@
                         :href="project.website"
                         class="button"
                         target="_blank"
+                        @click.stop
                     >
                         <span class="icon-text">
                             <span class="icon">
