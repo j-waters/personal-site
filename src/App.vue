@@ -4,7 +4,9 @@
         @before-enter="toggleBodyScroll(true)"
         @after-enter="toggleBodyScroll(false)"
     >
-        <div class="container is-max-desktop" v-if="notHome">
+        <div  v-if="notHome">
+            <BackgroundParticles id="particles-main"/>
+            <div class="container is-max-desktop">
             <TopNavigation />
             <router-view v-slot="{ Component, route }">
                 <transition
@@ -29,6 +31,7 @@
                     </section>
                 </transition>
             </router-view>
+            </div>
         </div>
         <div v-else>
             <router-view />

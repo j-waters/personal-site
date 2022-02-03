@@ -1,9 +1,11 @@
 <template>
-    <Particles id="particles" :options="options" />
+    <Particles :id="id" :options="options" class="particles" />
 </template>
 
 <script lang="ts" setup>
 import { IOptions, RecursivePartial } from "tsparticles";
+
+defineProps<{id: string}>()
 
 const options: RecursivePartial<IOptions> = {
     fpsLimit: 60,
@@ -52,9 +54,9 @@ const options: RecursivePartial<IOptions> = {
 </script>
 
 <style scoped>
-#particles {
-    width: 100%;
-    height: 100%;
-    /*position: absolute;*/
+.particles {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
 }
 </style>

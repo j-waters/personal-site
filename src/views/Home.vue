@@ -1,6 +1,6 @@
 <template>
     <div id="root" :class="{ before }">
-        <BackgroundParticles />
+        <BackgroundParticles id="particles-home"/>
         <section class="hero is-fullheight">
             <div class="hero-body is-justify-content-space-around">
                 <HomeNavigation />
@@ -26,6 +26,7 @@ onMounted(() => nextTick(() => (before.value = false)));
     opacity: 1;
     transition: opacity 1.5s;
     min-height: 100vh;
+    z-index: -1;
 
     &.before {
         opacity: 0;
