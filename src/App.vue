@@ -9,7 +9,8 @@
             <router-view v-slot="{ Component, route }">
                 <transition
                     :name="horizontalTransition"
-
+                    @before-enter="toggleBodyScroll(true)"
+                    @after-enter="toggleBodyScroll(false)"
                 >
                     <section
                         class="hero is-fullheight-with-navbar"
@@ -112,10 +113,20 @@ html {
 </style>
 
 <style lang="scss" scoped>
+    @import "~bulma/sass/utilities/mixins";
+
 .page-fullheight {
     align-items: flex-start !important;
     .box {
-        min-height: calc(100vh - #{3.25rem + 1.5rem});
+        @include desktop {
+            height: calc(100vh - #{3.25rem + 1.5rem});
+        }
+        @include touch {
+            height: calc(100vh - 3.25rem);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        overflow: auto;
     }
 }
 
@@ -191,12 +202,11 @@ html {
     z-index: 100;
 }
 .slide-up-over-enter-from {
-    transform: translateY(100%);
+    transform: translateY(100vh);
 }
 
-
 .slide-down-over-leave-to {
-    transform: translateY(100%);
+    transform: translateY(100vh);
 }
 
 </style>
