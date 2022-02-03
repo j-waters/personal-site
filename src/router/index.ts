@@ -29,7 +29,8 @@ const routes: Array<RouteRecordRaw> = [
             import(/* webpackChunkName: "projects" */ "@/views/ProjectPage.vue"),
         props: true,
         meta: {
-            noPadding: true
+            noPadding: true,
+            childTo: "Projects"
         }
     },
     {

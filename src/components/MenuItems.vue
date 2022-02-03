@@ -1,6 +1,6 @@
 <template>
-    <span v-for="item in menuItems" :key="item.route" :class="extraClass">
-        <router-link :to="item.route" class="hover-underline-animation">{{
+    <span v-for="item, i in menuItems" :key="item.route" :class="extraClass">
+        <router-link :to="item.route" class="hover-underline-animation" :class="{'router-link-active': indexFromPath(currentPath) === i}">{{
             item.title
         }}</router-link>
     </span>
@@ -8,8 +8,14 @@
 
 <script lang="ts" setup>
 import menuItems from "@/data/menuItems";
+import { indexFromPath } from "@/helpers/indexFromPath";
+import { computed } from "vue";
+import { useRoute } from "vue-router";
 
 defineProps<{ extraClass?: string }>();
+
+const currentPath = computed(() => useRoute().path)
+
 </script>
 
 <style lang="scss" scoped>
