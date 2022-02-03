@@ -3,7 +3,7 @@ title: Multipyer
 subtitle: A multiplayer game framework and dashboard
 github: https://github.com/j-waters/Multipyer-Server
 website: http://multipyer.jamescwaters.com
-tags: ["python", "school", "jquery", "web"]
+tags: ["python", "school", "jquery", "web", "desktop"]
 date: 2017-01-01
 ---
 

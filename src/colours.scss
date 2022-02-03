@@ -5,6 +5,24 @@ $primary: #ffd700;
 
 $navbar-item-color: $primary;
 
+$orange: orange;
+$orange-invert: findColorInvert($orange);
+
+$custom-colors: (
+    "orange": (
+        $orange,
+        $orange-invert,
+    ),
+    "cyan": (
+        $cyan,
+        findColorInvert(cyan),
+    ),
+    "purple": (
+        $purple,
+        findColorInvert($purple),
+    ),
+);
+
 @import "~bulma/sass/utilities/derived-variables";
 
 //$menu-hover: lighten($primary, 10%);

@@ -1,28 +1,33 @@
 <template>
     <div class="projects">
-        <p class="block">
-            A selection of the projects I've worked on over the years. Filter by
-            technology
-        </p>
-        <VueMultiselect
-            v-model="filterTags"
-            :options="tags"
-            :multiple="true"
-            track-by="id"
-            label="name"
-            class="block"
-        >
-            <template v-slot:option="props"
-                ><TagComponent :tag="props.option"
-            /></template>
-            <template v-slot:tag="props">
-                <TagComponent
-                    :tag="props.option"
-                    :deletable="true"
-                    @delete="props.remove(props.option)"
-                />
-            </template>
-        </VueMultiselect>
+        <div class="container is-max-desktop block">
+            <h1 class="title is-1 has-text-centered">Projects</h1>
+            <p class="block has-text-centered">
+                A selection of the projects I've worked on over the years.
+                Filter by technology
+            </p>
+            <VueMultiselect
+                v-model="filterTags"
+                :options="tags"
+                :multiple="true"
+                track-by="id"
+                label="name"
+                class="block"
+                placeholder="Search projects by tag"
+            >
+                <template v-slot:option="props"
+                    ><TagComponent :tag="props.option"
+                /></template>
+                <template v-slot:tag="props">
+                    <TagComponent
+                        :tag="props.option"
+                        :deletable="true"
+                        @delete="props.remove(props.option)"
+                        class="mr-2 mb-2"
+                    />
+                </template>
+            </VueMultiselect>
+        </div>
 
         <Project
             v-for="project in filteredProjects"
@@ -47,14 +52,18 @@ const projectsStore = useProjectsStore();
 projectsStore.loadAll();
 
 function getProjectScore(project: ProjectItem): number {
-    const tagCount = filterTags.value.length > 0 ? project.tags.reduce(
-        (acc, tagId) => acc + (filterTagIds.value.includes(tagId) ? 1 : 0),
-        0
-    ) : 1;
+    const tagCount =
+        filterTags.value.length > 0
+            ? project.tags.reduce(
+                  (acc, tagId) =>
+                      acc + (filterTagIds.value.includes(tagId) ? 1 : 0),
+                  0
+              )
+            : 1;
     if (tagCount == 0) {
-        return 0
+        return 0;
     }
-    const dateWeight = project.date.getTime() / 2000000000000
+    const dateWeight = project.date.getTime() / 2000000000000;
     return tagCount + dateWeight;
 }
 
@@ -71,4 +80,8 @@ const tags = computed(() => tagsStore.tags);
 
 <style lang="scss" scoped>
 @import "~vue-multiselect/dist/vue-multiselect.css";
+
+.search {
+    max-width: 300px;
+}
 </style>
