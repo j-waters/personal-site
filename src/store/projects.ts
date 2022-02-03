@@ -3,11 +3,12 @@ import pathListToTree from "path-list-to-tree";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import remarkFrontmatter from "remark-frontmatter";
-import remarkHtml from "remark-html";
+import remarkHtml, { Root } from "remark-html";
 import remarkFrontmatterPlugin from "remark-extract-frontmatter";
 import { load } from "js-yaml";
-
 import type { TagID } from "@/store/tags";
+
+import type { Literal } from "unist";
 
 type PostMedia = { [key: string]: string };
 
@@ -19,6 +20,7 @@ interface PostItem {
     tags: TagID[];
     date: Date;
     media?: PostMedia;
+    summary: string;
 }
 
 interface ProjectMedia extends PostMedia {
@@ -50,6 +52,19 @@ export const useProjectsStore = defineStore("projects", {
                 .use(remarkHtml)
                 .use(remarkFrontmatter)
                 .use(remarkFrontmatterPlugin, { yaml: load })
+                .use(() => (tree: Root, file) => {
+                    for (const child of tree.children) {
+                        if (child.type == "paragraph") {
+                            const textNode = child
+                                .children[0] as Literal<string>;
+                            const summary = textNode.value;
+                            file.data.summary = summary.endsWith(".")
+                                ? summary.slice(0, -1)
+                                : summary;
+                            break;
+                        }
+                    }
+                })
                 .process(post);
             const frontMatter = md.data as Frontmatter;
             const project: ProjectItem = {

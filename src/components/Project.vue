@@ -1,5 +1,5 @@
 <template>
-    <div class="block card is-horizontal">
+    <div class="block card is-horizontal is-clickable">
         <div class="card-image is-flex-grow-3">
             <figure class="image">
                 <img :src="project.media.cover" />
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <div class="content">
+            <div>
                 <div class="tags mb-1">
                     <TagComponent
                         v-for="tagId in project.tags"
@@ -31,7 +31,13 @@
                         :tag-id="tagId"
                     />
                 </div>
-                <p>{{ project.subtitle }}</p>
+                <p class="content">
+                    {{ project.summary }}...&nbsp;<router-link
+                        to=""
+                        class="is-underlined"
+                        >read more »</router-link
+                    >
+                </p>
 
                 <div class="buttons">
                     <a

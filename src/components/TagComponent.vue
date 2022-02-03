@@ -46,13 +46,7 @@ const icon = computed(() => {
     if (tagDetails.value!.icon) {
         return tagDetails.value!.icon;
     }
-    switch (tagDetails.value!.type) {
-        case "reason":
-            return "orange";
-        case "technology":
-            return "fa-tools";
-    }
-    return "";
+    return "fa-tools";
 });
 </script>
 

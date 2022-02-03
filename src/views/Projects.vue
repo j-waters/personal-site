@@ -4,7 +4,25 @@
             <h1 class="title is-1 has-text-centered">Projects</h1>
             <p class="block has-text-centered">
                 A selection of the projects I've worked on over the years.
-                Filter by technology
+                Filter by
+                <TagComponent
+                    :tag="{ type: 'technology', name: 'Technology' }"
+                />,
+                <TagComponent
+                    :tag="{
+                        type: 'reason',
+                        name: 'Context',
+                        icon: 'fa-university',
+                    }"
+                />
+                and
+                <TagComponent
+                    :tag="{
+                        type: 'platform',
+                        name: 'Platform',
+                        icon: 'fa-desktop',
+                    }"
+                />:
             </p>
             <VueMultiselect
                 v-model="filterTags"
