@@ -4,33 +4,36 @@
         @before-enter="toggleBodyScroll(true)"
         @after-enter="toggleBodyScroll(false)"
     >
-        <div  v-if="notHome">
-            <BackgroundParticles id="particles-main"/>
+        <div v-if="notHome">
+            <BackgroundParticles id="particles-main" />
             <div class="container is-max-desktop">
-            <TopNavigation />
-            <router-view v-slot="{ Component, route }">
-                <transition
-                    :name="horizontalTransition"
-                    @before-enter="toggleBodyScroll(true)"
-                    @after-enter="toggleBodyScroll(false)"
-                >
-                    <section
-                        class="hero is-fullheight-with-navbar"
-                        :key="route.path"
+                <TopNavigation />
+                <router-view v-slot="{ Component, route }">
+                    <transition
+                        :name="horizontalTransition"
+                        @before-enter="toggleBodyScroll(true)"
+                        @after-enter="toggleBodyScroll(false)"
                     >
-                        <div
-                            class="hero-body p-0"
-                            :class="{
-                                'page-fullheight': route.meta.fullHeight,
-                            }"
+                        <section
+                            class="hero is-fullheight-with-navbar"
+                            :key="route.path"
                         >
-                            <div class="box" :class="{'p-0': route.meta.noPadding}">
-                                <component :is="Component" />
+                            <div
+                                class="hero-body p-0"
+                                :class="{
+                                    'page-fullheight': route.meta.fullHeight,
+                                }"
+                            >
+                                <div
+                                    class="box"
+                                    :class="{ 'p-0': route.meta.noPadding }"
+                                >
+                                    <component :is="Component" />
+                                </div>
                             </div>
-                        </div>
-                    </section>
-                </transition>
-            </router-view>
+                        </section>
+                    </transition>
+                </router-view>
             </div>
         </div>
         <div v-else>
@@ -61,8 +64,6 @@ const isFirstNavigation = ref(true);
 
 const horizontalTransition = ref("");
 
-
-
 watch(
     () => ({
         ...route,
@@ -73,19 +74,19 @@ watch(
         }
 
         if (to.meta.childTo == from.name) {
-            horizontalTransition.value = "slide-up-over"
-            console.log("up")
-            return
+            horizontalTransition.value = "slide-up-over";
+            console.log("up");
+            return;
         }
         if (from.meta.childTo == to.name) {
-            horizontalTransition.value = "slide-down-over"
-            console.log("down")
-            return
+            horizontalTransition.value = "slide-down-over";
+            console.log("down");
+            return;
         }
 
-        const fromIndex = indexFromPath(from.path)
-        const toIndex = indexFromPath(to.path)
-        console.log(fromIndex, toIndex)
+        const fromIndex = indexFromPath(from.path);
+        const toIndex = indexFromPath(to.path);
+        console.log(fromIndex, toIndex);
         if (fromIndex > toIndex) {
             horizontalTransition.value = "slide-right";
         } else {
@@ -116,7 +117,7 @@ html {
 </style>
 
 <style lang="scss" scoped>
-    @import "~bulma/sass/utilities/mixins";
+@import "~bulma/sass/utilities/mixins";
 
 .page-fullheight {
     align-items: flex-start !important;
@@ -196,12 +197,10 @@ html {
         left: 0;
         right: 0;
     }
-
 }
 
 .slide-down-over-leave-active,
-.slide-up-over-enter-active,
-{
+.slide-up-over-enter-active {
     z-index: 100;
 }
 .slide-up-over-enter-from {
@@ -211,5 +210,4 @@ html {
 .slide-down-over-leave-to {
     transform: translateY(100vh);
 }
-
 </style>

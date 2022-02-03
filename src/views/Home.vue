@@ -1,6 +1,6 @@
 <template>
     <div id="root" :class="{ before }">
-        <BackgroundParticles id="particles-home"/>
+        <BackgroundParticles id="particles-home" />
         <section class="hero is-fullheight">
             <div class="hero-body is-justify-content-space-around">
                 <HomeNavigation />

@@ -5,7 +5,7 @@
 <script lang="ts" setup>
 import { IOptions, RecursivePartial } from "tsparticles";
 
-defineProps<{id: string}>()
+defineProps<{ id: string }>();
 
 const options: RecursivePartial<IOptions> = {
     fpsLimit: 60,

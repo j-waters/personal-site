@@ -26,12 +26,14 @@ const routes: Array<RouteRecordRaw> = [
         path: "/projects/:id",
         name: "Project",
         component: () =>
-            import(/* webpackChunkName: "projects" */ "@/views/ProjectPage.vue"),
+            import(
+                /* webpackChunkName: "projects" */ "@/views/ProjectPage.vue"
+            ),
         props: true,
         meta: {
             noPadding: true,
-            childTo: "Projects"
-        }
+            childTo: "Projects",
+        },
     },
     {
         path: "/contact",
@@ -45,6 +47,5 @@ const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes,
 });
-
 
 export default router;

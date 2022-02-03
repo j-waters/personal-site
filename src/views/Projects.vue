@@ -47,13 +47,13 @@
             </VueMultiselect>
         </div>
 
-        <router-link v-for="project in filteredProjects"
-                     :key="project.id" :to="`/projects/${project.id}`" class="is-clickable block is-block">
-        <Project
-
-            :project="project"
-            :mini="true"
-        />
+        <router-link
+            v-for="project in filteredProjects"
+            :key="project.id"
+            :to="`/projects/${project.id}`"
+            class="is-clickable block is-block"
+        >
+            <Project :project="project" :mini="true" />
         </router-link>
     </div>
 </template>

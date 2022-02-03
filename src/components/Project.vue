@@ -1,16 +1,16 @@
 <template>
-    <div class="card" :class="{'is-horizontal': mini}" >
-        <div class="card-image is-flex-grow-3" >
+    <div class="card" :class="{ 'is-horizontal': mini }">
+        <div class="card-image is-flex-grow-3">
             <figure class="image is-flex is-align-items-center">
-                <img class="image-blur" :src="project.media.cover"/>
-                <img :src="project.media.cover"  />
+                <img class="image-blur" :src="project.media.cover" />
+                <img :src="project.media.cover" />
             </figure>
         </div>
         <div class="card-content is-flex-grow-5">
             <div class="media mb-2">
                 <div class="media-left">
-                    <figure class="image is-48x48" >
-                        <img :src="project.media.icon"  />
+                    <figure class="image is-48x48">
+                        <img :src="project.media.icon" />
                     </figure>
                 </div>
                 <div class="media-content">
@@ -35,11 +35,12 @@
 
                 <p class="mb-2" v-if="mini">
                     {{ project.summary }}.&nbsp;<router-link
-                    :to="`/projects/${project.id}`"
-                    class="is-underlined"
-                >Read more »</router-link>
+                        :to="`/projects/${project.id}`"
+                        class="is-underlined"
+                        >Read more »</router-link
+                    >
                 </p>
-                <p v-else class="content" v-html="project.content"/>
+                <p v-else class="content" v-html="project.content" />
 
                 <div class="buttons">
                     <a
@@ -78,7 +79,9 @@
                         </span>
                     </a>
                 </div>
-                <router-link to="/projects" class="is-link" v-if="!mini">‹ Back to projects</router-link>
+                <router-link to="/projects" class="is-link" v-if="!mini"
+                    >‹ Back to projects</router-link
+                >
             </div>
         </div>
     </div>
@@ -87,7 +90,6 @@
 <script lang="ts" setup>
 import TagComponent from "@/components/TagComponent.vue";
 import { ProjectItem } from "@/store/projects";
-
 
 const props = defineProps<{ project: ProjectItem; mini: boolean }>();
 </script>
@@ -111,7 +113,7 @@ $shadow-multiplier: 3;
     }
 }
 
-.image{
+.image {
     overflow: hidden;
 }
 
