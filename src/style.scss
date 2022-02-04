@@ -2,8 +2,25 @@
 
 $body-overflow-y: overlay;
 @import "~bulma";
+$tooltip-background-opacity: 1;
+@import "~@creativebulma/bulma-tooltip/src/sass";
 @import "style/horizontal-card";
 
 //@import url("assets/css/tofino.css");
 //
 //@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+
+@import "~vue-multiselect/dist/vue-multiselect.css";
+
+.multiselect__tags, .multiselect__content-wrapper {
+  &, .multiselect__input {
+    background-color: $card-background-color;
+  }
+}
+
+.multiselect__option--selected {
+  background-color: darken($card-background-color, 10%);
+  &::after {
+    color: $text;
+  }
+}

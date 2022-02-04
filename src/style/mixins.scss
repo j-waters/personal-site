@@ -93,7 +93,8 @@
 @mixin scrollbars(
     $size: 10px,
     $foreground-color: #999,
-    $background-color: #333
+    $background-color: #333,
+    $right-radius: 0px,
 ) {
     // For Chrome & Safari
     &::-webkit-scrollbar {
@@ -102,9 +103,13 @@
     }
     &::-webkit-scrollbar-thumb {
         background: $foreground-color;
+        border-bottom-right-radius: $right-radius;
+        border-top-right-radius: $right-radius;
     }
     &::-webkit-scrollbar-track {
         background: $background-color;
+        border-bottom-right-radius: $right-radius;
+        border-top-right-radius: $right-radius;
     }
 
     // Standard version (Firefox only for now)

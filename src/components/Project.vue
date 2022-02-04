@@ -46,7 +46,7 @@
                     <a
                         v-if="project.github"
                         :href="project.github"
-                        class="button"
+                        class="button is-link"
                         target="_blank"
                         @click.stop
                     >
@@ -64,7 +64,7 @@
                     <a
                         v-if="project.website"
                         :href="project.website"
-                        class="button"
+                        class="button is-link"
                         target="_blank"
                         @click.stop
                     >

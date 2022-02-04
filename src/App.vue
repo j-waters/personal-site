@@ -114,6 +114,10 @@ body {
 html {
     @include scrollbars();
 }
+
+.box {
+    @include scrollbars($right-radius: 6px);
+}
 </style>
 
 <style lang="scss" scoped>

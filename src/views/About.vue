@@ -1,62 +1,61 @@
 <template>
     <div class="about">
         <h1 class="title is-1">Hello!</h1>
-        <p>
+        <p class="block">
             My name's James, and I'm a fourth year computer science student at
             Southampton University
         </p>
-        <p>
-            I interned for 2 summers at
-            <a href="https://netcraft.com">Netcraft</a>, and worked part time as
+        <p class="block">
+            I interned for 3 summers at
+            <a class="is-link" href="https://netcraft.com">Netcraft</a>, and worked part time as
             a frontend developer at
-            <a href="https://www.buckleconsulting.com/">Buckle Consulting</a>
+            <a class="is-link" href="https://www.buckleconsulting.com/">Buckle Consulting</a>
             for a year
         </p>
-        <p>
-            See my <router-link to="/projects">projects</router-link> or my
+        <p class="block">
+            See my <router-link to="/projects" class="button is-small is-info">projects</router-link> or my
             <a href="https://github.com/j-waters">Github</a>
             to see most of my personal projects and some of my coursework
         </p>
-        <h4>Proficient</h4>
-        <p>
-            <span
-                class="skill"
-                v-for="skill in skills.proficient"
-                :key="skill"
-                >{{ skill }}</span
-            >
-        </p>
-        <h4>Familiar</h4>
-        <p>
-            <span class="skill" v-for="skill in skills.familiar" :key="skill">{{
-                skill
-            }}</span>
-        </p>
+
+        <h2 class="heading is-size-5">Proficient</h2>
+        <div class="tags is-justify-content-center">
+            <ClickableTagComponent
+                v-for="tag in proficient"
+                :key="tag.id"
+                :tag="tag"
+            />
+        </div>
+
+        <h2 class="heading is-size-5">Familiar</h2>
+        <div class="tags is-justify-content-center">
+            <ClickableTagComponent
+                v-for="tag in familiar"
+                :key="tag.id"
+                :tag="tag"
+            />
+        </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-const skills = {
-    proficient: [
-        "JavaScript",
-        "TypeScript",
-        "Python",
-        "Java",
-        "SQL",
-        "NestJS",
-        "VueJS",
-        "Angular",
-        "Android",
-    ],
-    familiar: [
-        "Haskell",
-        "Perl",
-        "Azure Functions",
-        "Google Cloud",
-        "Docker",
-        "MongoDB",
-    ],
-};
+import { Familiarity, useTagsStore } from "@/store/tags";
+import { computed } from "vue";
+import TagComponent from "@/components/TagComponent.vue";
+import { useProjectsStore } from "@/store/projects";
+import ClickableTagComponent from "@/components/ClickableTagComponent.vue";
+
+const projectsStore = useProjectsStore();
+projectsStore.loadAll();
+
+const tagsStore = useTagsStore();
+
+const proficient = computed(() =>
+    tagsStore.tags.filter((tag) => tag.familiarity == Familiarity.HIGH)
+);
+const familiar = computed(() =>
+    tagsStore.tags.filter((tag) => tag.familiarity == Familiarity.MEDIUM)
+);
 </script>
 
 <style scoped lang="scss">
@@ -73,18 +72,7 @@ h4 {
     margin-block-end: 0;
 }
 
-a {
-    cursor: pointer;
-    pointer-events: initial;
-}
-
-a:link {
-    /*text-decoration: inherit;*/
-    color: inherit;
-}
-
-a:visited {
-    /*text-decoration: inherit;*/
-    color: inherit;
+a:not(.button) {
+    text-decoration: underline;
 }
 </style>

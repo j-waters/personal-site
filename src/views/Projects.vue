@@ -60,14 +60,36 @@
 
 <script lang="ts" setup>
 import VueMultiselect from "vue-multiselect";
-import { computed, ref } from "vue";
+import { computed, reactive, ref, watch } from "vue";
 import TagComponent from "@/components/TagComponent.vue";
 import Project from "@/components/Project.vue";
 import { ProjectItem, useProjectsStore } from "@/store/projects";
-import { Tag, useTagsStore } from "@/store/tags";
+import { isTag, Tag, TagID, useTagsStore } from "@/store/tags";
+import { useRoute, useRouter } from "vue-router";
 
-const filterTags = ref<Tag[]>([]);
-const filterTagIds = computed(() => filterTags.value?.map((tag) => tag.id));
+const tagsStore = useTagsStore();
+
+const router = useRouter();
+const route = useRoute();
+
+const filterTagIds = computed({
+    set(tagIds: TagID[]) {
+        router.push({query: tagIds.length > 0 ? {tags:  tagIds.join(",")} : {}})
+    },
+    get(): TagID[] {
+        const tagsString = route.query.tags as string | undefined
+        return tagsString?.split(",").filter(isTag) ?? [];
+    }
+})
+
+const filterTags = computed({
+    get(): Tag[] {
+        return tagsStore.tagsFromIds(filterTagIds.value)
+    },
+    set(tags: Tag[]) {
+        filterTagIds.value = tags.map(tag => tag.id)
+    }
+})
 
 const projectsStore = useProjectsStore();
 projectsStore.loadAll();
@@ -94,13 +116,15 @@ const filteredProjects = computed(() =>
         .sort((a, b) => getProjectScore(b) - getProjectScore(a))
 );
 
-const tagsStore = useTagsStore();
 
 const tags = computed(() => tagsStore.tags);
+
+// watch(() => route.query.tags, value => )
 </script>
 
 <style lang="scss" scoped>
-@import "~vue-multiselect/dist/vue-multiselect.css";
+@import "~@/colours";
+
 
 .search {
     max-width: 300px;

@@ -6,9 +6,9 @@ import remarkFrontmatter from "remark-frontmatter";
 import remarkHtml, { Root } from "remark-html";
 import remarkFrontmatterPlugin from "remark-extract-frontmatter";
 import { load } from "js-yaml";
-import type { TagID } from "@/store/tags";
 
 import type { Literal } from "unist";
+import { TagID } from "@/store/tags";
 
 type PostMedia = { [key: string]: string };
 
