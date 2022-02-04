@@ -2,9 +2,7 @@
     <div class="about has-text-primary">
         <div class="tile is-vertical">
             <div class="tile is-parent">
-                <article
-                    class="tile is-child box is-transparent has-text-primary"
-                >
+                <article class="tile is-child box has-text-primary">
                     <h1 class="title is-1 has-text-primary mb-2">Hello!</h1>
                     <div class="buttons block is-justify-content-center">
                         <LinkButton
@@ -51,9 +49,7 @@
             </div>
             <div class="tile">
                 <div class="tile is-parent">
-                    <article
-                        class="tile is-child box is-transparent has-text-primary"
-                    >
+                    <article class="tile is-child box has-text-primary">
                         <h2 class="heading is-size-5">Proficient</h2>
                         <div class="tags is-justify-content-center">
                             <ClickableTagComponent
@@ -65,9 +61,7 @@
                     </article>
                 </div>
                 <div class="tile is-parent">
-                    <article
-                        class="tile is-child box is-transparent has-text-primary"
-                    >
+                    <article class="tile is-child box has-text-primary">
                         <h2 class="heading is-size-5">Familiar</h2>
                         <div class="tags is-justify-content-center">
                             <ClickableTagComponent
@@ -117,8 +111,8 @@ const familiar = computed(() =>
     font-size: 5rem;
 }
 
-.box.is-transparent {
-    background-color: transparent;
+.box {
+    background-color: #020024;
     //backdrop-filter: blur(1.5px);
     padding: 0.75rem;
 }
