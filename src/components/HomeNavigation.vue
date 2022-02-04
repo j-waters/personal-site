@@ -34,12 +34,11 @@ onMounted(() => setTimeout(() => (hidden.value = false), 500));
 </script>
 
 <style lang="scss" scoped>
-    @import "~bulma/sass/utilities/mixins";
-    .home-nav {
+@import "~bulma/sass/utilities/mixins";
+.home-nav {
     text-align: center;
     color: #ffd700;
     font-size: 7rem;
-
 
     @include mobile {
         font-size: 4rem;
@@ -92,7 +91,7 @@ onMounted(() => setTimeout(() => (hidden.value = false), 500));
 }
 
 .menu {
-    font-size: .29em;
+    font-size: 0.29em;
     line-height: 1.5;
     .hidden & ::v-deep span {
         opacity: 0;

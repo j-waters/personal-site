@@ -1,11 +1,11 @@
 <template>
     <a v-if="isOutbound" :href="to" :class="classes">
         <span class="icon-text is-align-items-center">
-  <span class="icon is-large" v-if="icon">
-    <i class="fa-lg" :class="icon"></i>
-  </span>
-  <span v-if="$slots.default"><slot/></span>
-</span>
+            <span class="icon is-large" v-if="icon">
+                <i class="fa-lg" :class="icon"></i>
+            </span>
+            <span v-if="$slots.default"><slot /></span>
+        </span>
     </a>
     <router-link v-else :to="to" :class="classes">
         <slot />
@@ -19,10 +19,15 @@ import { computed } from "vue";
 const props = defineProps<{ to: RouteLocationRaw; icon?: string }>();
 
 const isOutbound = computed(
-    () => typeof props.to === "string" && (props.to.startsWith("http") || props.to.startsWith("mailto"))
+    () =>
+        typeof props.to === "string" &&
+        (props.to.startsWith("http") || props.to.startsWith("mailto"))
 );
 
-const classes = computed(() => `button is-primary is-outlined ${props.icon ? 'has-icon' : 'is-size-4'}`);
+const classes = computed(
+    () =>
+        `button is-primary is-outlined ${props.icon ? "has-icon" : "is-size-4"}`
+);
 </script>
 
 <style lang="scss" scoped>

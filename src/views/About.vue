@@ -7,36 +7,45 @@
                 >
                     <h1 class="title is-1 has-text-primary mb-2">Hello!</h1>
                     <div class="buttons block is-justify-content-center">
-                        <LinkButton to="https://github.com/j-waters" icon="fab fa-github"/>
-                        <LinkButton to="mailto:james@jcwaters.co.uk" icon="fas fa-envelope"/>
-                        <LinkButton to="https://www.linkedin.com/in/james-c-waters/" icon="fab fa-linkedin"/>
+                        <LinkButton
+                            to="https://github.com/j-waters"
+                            icon="fab fa-github"
+                        />
+                        <LinkButton
+                            to="mailto:james@jcwaters.co.uk"
+                            icon="fas fa-envelope"
+                        />
+                        <LinkButton
+                            to="https://www.linkedin.com/in/james-c-waters/"
+                            icon="fab fa-linkedin"
+                        />
                     </div>
                     <div class="is-size-5">
-                    <p class="mb-2">
-                        My name's James, and I'm a fourth year computer science
-                        student at Southampton University.
-                    </p>
-                    <p class="mb-2">
-                        I interned for 3 summers at
-                        <LinkButton to="https://netcraft.com"
-                            >Netcraft</LinkButton
-                        >
-                        and worked part time as a frontend developer at
-                        <LinkButton to="https://www.buckleconsulting.com/"
-                            >Buckle Consulting</LinkButton
-                        >
-                        for a year.
-                    </p>
-                    <p>
-                        See my
-                        <LinkButton to="/projects">projects</LinkButton>
-                        or my
-                        <LinkButton to="https://github.com/j-waters"
-                            >Github</LinkButton
-                        >
-                        to see most of my personal projects and some of my
-                        coursework.
-                    </p>
+                        <p class="mb-2">
+                            My name's James, and I'm a fourth year computer
+                            science student at Southampton University.
+                        </p>
+                        <p class="mb-2">
+                            I interned for 3 summers at
+                            <LinkButton to="https://netcraft.com"
+                                >Netcraft</LinkButton
+                            >
+                            and worked part time as a frontend developer at
+                            <LinkButton to="https://www.buckleconsulting.com/"
+                                >Buckle Consulting</LinkButton
+                            >
+                            for a year.
+                        </p>
+                        <p>
+                            See my
+                            <LinkButton to="/projects">projects</LinkButton>
+                            or my
+                            <LinkButton to="https://github.com/j-waters"
+                                >Github</LinkButton
+                            >
+                            to see most of my personal projects and some of my
+                            coursework.
+                        </p>
                     </div>
                 </article>
             </div>
@@ -111,6 +120,6 @@ const familiar = computed(() =>
 .box.is-transparent {
     background-color: transparent;
     //backdrop-filter: blur(1.5px);
-    padding: .75rem;
+    padding: 0.75rem;
 }
 </style>
