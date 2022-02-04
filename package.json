@@ -44,6 +44,7 @@
     "eslint-plugin-vue": "^8.0.3",
     "favicons": "^6.2.2",
     "favicons-webpack-plugin": "^5.0.2",
+    "imagemin-webpack-plugin": "^2.4.2",
     "particles.vue3": "^1.1.11",
     "prettier": "^2.5.1",
     "sass": "^1.26.5",

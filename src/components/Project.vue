@@ -2,15 +2,28 @@
     <div class="card" :class="{ 'is-horizontal': mini }">
         <div class="card-image is-flex-grow-3">
             <figure class="image is-flex is-align-items-center">
-                <img class="image-blur" :src="project.media.cover" />
-                <img :src="project.media.cover" />
+                <img
+                    class="image-blur"
+                    :src="project.media.cover"
+                    loading="lazy"
+                    alt=""
+                />
+                <img
+                    :src="project.media.cover"
+                    loading="lazy"
+                    :alt="`${project.title} cover image`"
+                />
             </figure>
         </div>
         <div class="card-content is-flex-grow-5">
             <div class="media mb-2">
                 <div class="media-left">
                     <figure class="image is-48x48">
-                        <img :src="project.media.icon" />
+                        <img
+                            :src="project.media.icon"
+                            loading="lazy"
+                            :alt="`${project.title} icon`"
+                        />
                     </figure>
                 </div>
                 <div class="media-content">
