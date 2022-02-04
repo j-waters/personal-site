@@ -1,21 +1,22 @@
 <template>
-    <nav
-        class="navbar is-transparent is-size-5 has-text-primary"
-        role="navigation"
-        aria-label="main navigation"
-    >
-        <div class="navbar-brand is-align-items-center">
-            <router-link to="/" class="navbar-item draw-border">
-                <span class="initials is-size-3 has-text-primary">JW</span>
-            </router-link>
-        </div>
+    <div class="container is-max-desktop">
+        <nav
+            class="navbar is-flex is-transparent is-size-5 has-text-primary is-justify-content-space-between"
+            role="navigation"
+            aria-label="main navigation"
+        >
+            <div class="is-align-items-center is-flex">
+                <router-link to="/" class="navbar-item draw-border">
+                    <span class="initials is-size-3 has-text-primary">JW</span>
+                </router-link>
+                <div class="divider is-hidden-tablet"></div>
+            </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-end is-align-items-center">
+            <div class="is-flex is-align-items-center">
                 <MenuItems extra-class="navbar-item" />
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </template>
 
 <script lang="ts" setup>
@@ -47,12 +48,10 @@ import MenuItems from "@/components/MenuItems.vue";
     display: inline-block;
 }
 
-#vertical-divider {
-    display: inline-block;
-    height: 49%;
+.divider {
+    height: 80%;
     width: 2px;
     background-color: #ffd700;
-    margin: 0 5px;
 }
 
 #menu {
