@@ -3,7 +3,7 @@
     <!--        <div class="modal is-active">-->
     <!--            <div class="modal-background" @click="router.push('/projects')"></div>-->
     <!--            <div class="modal-content">-->
-    <div class="box p-0">
+    <div class="box p-0 mb-3">
         <Project v-if="project" :project="project" :mini="false" />
     </div>
     <!--            </div>-->

@@ -32,4 +32,6 @@ onMounted(() => nextTick(() => (before.value = false)));
         opacity: 0;
     }
 }
+
+
 </style>

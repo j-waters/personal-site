@@ -1,5 +1,5 @@
 <template>
-    <div class="projects">
+    <div class="box projects">
         <div class="container is-max-desktop block">
             <h1 class="title is-1 has-text-centered">Projects</h1>
             <p class="block has-text-centered">

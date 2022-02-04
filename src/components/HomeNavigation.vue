@@ -9,7 +9,7 @@
                 <div class="second-name">WATERS</div>
             </div>
         </div>
-        <div class="menu is-flex is-justify-content-space-evenly is-size-3">
+        <div class="menu is-flex is-justify-content-space-evenly">
             <menu-items />
         </div>
     </div>
@@ -34,10 +34,16 @@ onMounted(() => setTimeout(() => (hidden.value = false), 500));
 </script>
 
 <style lang="scss" scoped>
-.home-nav {
+    @import "~bulma/sass/utilities/mixins";
+    .home-nav {
     text-align: center;
     color: #ffd700;
     font-size: 7rem;
+
+
+    @include mobile {
+        font-size: 4rem;
+    }
 }
 
 .name {
@@ -86,6 +92,7 @@ onMounted(() => setTimeout(() => (hidden.value = false), 500));
 }
 
 .menu {
+    font-size: .29em;
     line-height: 1.5;
     .hidden & ::v-deep span {
         opacity: 0;

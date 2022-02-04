@@ -1,45 +1,75 @@
 <template>
-    <div class="about">
-        <h1 class="title is-1">Hello!</h1>
-        <p class="block">
-            My name's James, and I'm a fourth year computer science student at
-            Southampton University
-        </p>
-        <p class="block">
-            I interned for 3 summers at
-            <a class="is-link" href="https://netcraft.com">Netcraft</a>, and
-            worked part time as a frontend developer at
-            <a class="is-link" href="https://www.buckleconsulting.com/"
-                >Buckle Consulting</a
-            >
-            for a year
-        </p>
-        <p class="block">
-            See my
-            <router-link to="/projects" class="button is-small is-info"
-                >projects</router-link
-            >
-            or my
-            <a href="https://github.com/j-waters">Github</a>
-            to see most of my personal projects and some of my coursework
-        </p>
-
-        <h2 class="heading is-size-5">Proficient</h2>
-        <div class="tags is-justify-content-center">
-            <ClickableTagComponent
-                v-for="tag in proficient"
-                :key="tag.id"
-                :tag="tag"
-            />
-        </div>
-
-        <h2 class="heading is-size-5">Familiar</h2>
-        <div class="tags is-justify-content-center">
-            <ClickableTagComponent
-                v-for="tag in familiar"
-                :key="tag.id"
-                :tag="tag"
-            />
+    <div class="about has-text-primary">
+        <div class="tile is-vertical">
+            <div class="tile is-parent">
+                <article
+                    class="tile is-child box is-transparent has-text-primary"
+                >
+                    <h1 class="title is-1 has-text-primary mb-2">Hello!</h1>
+                    <div class="buttons block is-justify-content-center">
+                        <LinkButton to="https://github.com/j-waters" icon="fab fa-github"/>
+                        <LinkButton to="mailto:james@jcwaters.co.uk" icon="fas fa-envelope"/>
+                        <LinkButton to="https://www.linkedin.com/in/james-c-waters/" icon="fab fa-linkedin"/>
+                    </div>
+                    <div class="is-size-5">
+                    <p class="mb-2">
+                        My name's James, and I'm a fourth year computer science
+                        student at Southampton University.
+                    </p>
+                    <p class="mb-2">
+                        I interned for 3 summers at
+                        <LinkButton to="https://netcraft.com"
+                            >Netcraft</LinkButton
+                        >
+                        and worked part time as a frontend developer at
+                        <LinkButton to="https://www.buckleconsulting.com/"
+                            >Buckle Consulting</LinkButton
+                        >
+                        for a year.
+                    </p>
+                    <p>
+                        See my
+                        <LinkButton to="/projects">projects</LinkButton>
+                        or my
+                        <LinkButton to="https://github.com/j-waters"
+                            >Github</LinkButton
+                        >
+                        to see most of my personal projects and some of my
+                        coursework.
+                    </p>
+                    </div>
+                </article>
+            </div>
+            <div class="tile">
+                <div class="tile is-parent">
+                    <article
+                        class="tile is-child box is-transparent has-text-primary"
+                    >
+                        <h2 class="heading is-size-5">Proficient</h2>
+                        <div class="tags is-justify-content-center">
+                            <ClickableTagComponent
+                                v-for="tag in proficient"
+                                :key="tag.id"
+                                :tag="tag"
+                            />
+                        </div>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article
+                        class="tile is-child box is-transparent has-text-primary"
+                    >
+                        <h2 class="heading is-size-5">Familiar</h2>
+                        <div class="tags is-justify-content-center">
+                            <ClickableTagComponent
+                                v-for="tag in familiar"
+                                :key="tag.id"
+                                :tag="tag"
+                            />
+                        </div>
+                    </article>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -50,6 +80,7 @@ import { computed } from "vue";
 import TagComponent from "@/components/TagComponent.vue";
 import { useProjectsStore } from "@/store/projects";
 import ClickableTagComponent from "@/components/ClickableTagComponent.vue";
+import LinkButton from "@/components/LinkButton.vue";
 
 const projectsStore = useProjectsStore();
 projectsStore.loadAll();
@@ -73,12 +104,13 @@ const familiar = computed(() =>
     content: " • ";
 }
 
-h4 {
-    /*margin-bottom: ;*/
-    margin-block-end: 0;
+.title {
+    font-size: 5rem;
 }
 
-a:not(.button) {
-    text-decoration: underline;
+.box.is-transparent {
+    background-color: transparent;
+    //backdrop-filter: blur(1.5px);
+    padding: .75rem;
 }
 </style>

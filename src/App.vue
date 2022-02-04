@@ -24,12 +24,7 @@
                                     'page-fullheight': route.meta.fullHeight,
                                 }"
                             >
-                                <div
-                                    class="box"
-                                    :class="{ 'p-0': route.meta.noPadding, 'mb-3': !route.meta.fullHeight }"
-                                >
-                                    <component :is="Component" />
-                                </div>
+                                <component :is="Component" />
                             </div>
                         </section>
                     </transition>
@@ -124,7 +119,7 @@ html {
 
 .page-fullheight {
     align-items: flex-start !important;
-    .box {
+    :deep(.box) {
         @include desktop {
             height: calc(100vh - #{3.25rem + 1.5rem});
         }
