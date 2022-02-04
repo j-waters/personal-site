@@ -108,7 +108,7 @@ function toggleBodyScroll(disabled: boolean) {
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: rgba(2, 0, 36, 1);
+    background-color: #020024;
 }
 
 html {

@@ -113,7 +113,8 @@ export const useTagsStore = defineStore("tags", {
             return [...this.tagMap.values()].sort((a, b) => b.count - a.count);
         },
         tagsFromIds(): (tagIds: TagID[]) => Tag[] {
-            return (tagIds: TagID[]) => tagIds.map(tagId => this.tagMap.get(tagId)!)
-        }
+            return (tagIds: TagID[]) =>
+                tagIds.map((tagId) => this.tagMap.get(tagId)!);
+        },
     },
 });

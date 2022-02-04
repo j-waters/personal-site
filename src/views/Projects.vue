@@ -24,27 +24,41 @@
                     }"
                 />:
             </p>
-            <VueMultiselect
-                v-model="filterTags"
-                :options="tags"
-                :multiple="true"
-                track-by="id"
-                label="name"
-                class="block"
-                placeholder="Search projects by tag"
-            >
-                <template v-slot:option="props"
-                    ><TagComponent :tag="props.option"
-                /></template>
-                <template v-slot:tag="props">
-                    <TagComponent
-                        :tag="props.option"
-                        :deletable="true"
-                        @delete="props.remove(props.option)"
-                        class="mr-2 mb-2"
-                    />
-                </template>
-            </VueMultiselect>
+            <div class="block is-flex" style="gap: 1rem">
+                <VueMultiselect
+                    v-model="filterTags"
+                    :options="tags"
+                    :multiple="true"
+                    track-by="id"
+                    label="name"
+                    placeholder="Search projects by tag"
+                >
+                    <template v-slot:option="props"
+                        ><TagComponent :tag="props.option"
+                    /></template>
+                    <template v-slot:tag="props">
+                        <TagComponent
+                            :tag="props.option"
+                            :deletable="true"
+                            @delete="props.remove(props.option)"
+                            class="mr-2 mb-2"
+                        />
+                    </template>
+                </VueMultiselect>
+                <div class="is-block">
+                    <div
+                        class="tags has-addons is-flex-wrap-nowrap is-clickable toggle-switch"
+                        @click="isOr = !isOr"
+                    >
+                        <span class="tag" :class="{ 'is-success': isOr }"
+                            >OR</span
+                        >
+                        <span class="tag" :class="{ 'is-success': !isOr }"
+                            >AND</span
+                        >
+                    </div>
+                </div>
+            </div>
         </div>
 
         <router-link
@@ -72,29 +86,43 @@ const tagsStore = useTagsStore();
 const router = useRouter();
 const route = useRoute();
 
+function updateQuery(update: Record<string, any>) {
+    router.replace({ query: { ...route.query, ...update } });
+}
+
+const isOr = computed({
+    get() {
+        return !route.query.and;
+    },
+    set(isOr: boolean) {
+        updateQuery({ and: isOr ? undefined : 1 });
+    },
+});
+
 const filterTagIds = computed({
     set(tagIds: TagID[]) {
-        router.push({query: tagIds.length > 0 ? {tags:  tagIds.join(",")} : {}})
+        updateQuery({ tags: tagIds?.join(",") || undefined });
     },
     get(): TagID[] {
-        const tagsString = route.query.tags as string | undefined
+        const tagsString = route.query.tags as string | undefined;
         return tagsString?.split(",").filter(isTag) ?? [];
-    }
-})
+    },
+});
 
 const filterTags = computed({
     get(): Tag[] {
-        return tagsStore.tagsFromIds(filterTagIds.value)
+        return tagsStore.tagsFromIds(filterTagIds.value);
     },
     set(tags: Tag[]) {
-        filterTagIds.value = tags.map(tag => tag.id)
-    }
-})
+        filterTagIds.value = tags.map((tag) => tag.id);
+    },
+});
 
 const projectsStore = useProjectsStore();
 projectsStore.loadAll();
 
 function getProjectScore(project: ProjectItem): number {
+    const minimumTagCount = isOr.value ? 1 : filterTags.value.length;
     const tagCount =
         filterTags.value.length > 0
             ? project.tags.reduce(
@@ -103,7 +131,7 @@ function getProjectScore(project: ProjectItem): number {
                   0
               )
             : 1;
-    if (tagCount == 0) {
+    if (tagCount < minimumTagCount) {
         return 0;
     }
     const dateWeight = project.date.getTime() / 2000000000000;
@@ -116,17 +144,25 @@ const filteredProjects = computed(() =>
         .sort((a, b) => getProjectScore(b) - getProjectScore(a))
 );
 
-
 const tags = computed(() => tagsStore.tags);
-
-// watch(() => route.query.tags, value => )
 </script>
 
 <style lang="scss" scoped>
 @import "~@/colours";
 
-
 .search {
     max-width: 300px;
+}
+
+.toggle-switch {
+    height: 100%;
+    position: relative;
+
+    .tag {
+        height: 100%;
+        margin-bottom: 0;
+        transition: color, background-color;
+        transition-duration: 0.5s;
+    }
 }
 </style>

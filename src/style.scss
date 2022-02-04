@@ -12,15 +12,17 @@ $tooltip-background-opacity: 1;
 
 @import "~vue-multiselect/dist/vue-multiselect.css";
 
-.multiselect__tags, .multiselect__content-wrapper {
-  &, .multiselect__input {
-    background-color: $card-background-color;
-  }
+.multiselect__tags,
+.multiselect__content-wrapper {
+    &,
+    .multiselect__input {
+        background-color: $card-background-color;
+    }
 }
 
 .multiselect__option--selected {
-  background-color: darken($card-background-color, 10%);
-  &::after {
-    color: $text;
-  }
+    background-color: darken($card-background-color, 10%);
+    &::after {
+        color: $text;
+    }
 }
