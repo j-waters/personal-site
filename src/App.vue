@@ -26,7 +26,7 @@
                             >
                                 <div
                                     class="box"
-                                    :class="{ 'p-0': route.meta.noPadding }"
+                                    :class="{ 'p-0': route.meta.noPadding, 'mb-3': !route.meta.fullHeight }"
                                 >
                                     <component :is="Component" />
                                 </div>
@@ -108,7 +108,6 @@ function toggleBodyScroll(disabled: boolean) {
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: #020024;
 }
 
 html {
