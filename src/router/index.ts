@@ -35,12 +35,6 @@ const routes: Array<RouteRecordRaw> = [
             childTo: "Projects",
         },
     },
-    {
-        path: "/contact",
-        name: "Contact",
-        component: () =>
-            import(/* webpackChunkName: "contact" */ "@/views/Contact.vue"),
-    },
 ];
 
 const router = createRouter({

@@ -1,8 +1,8 @@
 <template>
     <div class="about">
-        <h1>Hello!</h1>
+        <h1 class="title is-1">Hello!</h1>
         <p>
-            My name's James, and I'm a third year computer science student at
+            My name's James, and I'm a fourth year computer science student at
             Southampton University
         </p>
         <p>
