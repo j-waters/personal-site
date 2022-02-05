@@ -9,7 +9,7 @@
                 <router-link to="/" class="navbar-item draw-border">
                     <span class="initials is-size-3 has-text-primary">JW</span>
                 </router-link>
-                <div class="divider is-hidden-tablet"></div>
+                <div class="divider"></div>
             </div>
 
             <div class="is-flex is-align-items-center">
@@ -26,6 +26,7 @@ import MenuItems from "@/components/MenuItems.vue";
 <style lang="scss" scoped>
 @import "~@/style/mixins.scss";
 @import "~@/colours.scss";
+@import "~bulma/sass/utilities/mixins";
 
 .is-transparent {
     background-color: transparent;
@@ -49,9 +50,13 @@ import MenuItems from "@/components/MenuItems.vue";
 }
 
 .divider {
-    height: 80%;
+    height: 60%;
     width: 2px;
     background-color: #ffd700;
+
+    @include from(350px) {
+        display: none;
+    }
 }
 
 #menu {
