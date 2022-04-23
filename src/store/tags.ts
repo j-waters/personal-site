@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { useProjectsStore } from "@/store/projects";
+import { Exception } from "sass";
 
 type TagType = "platform" | "technology" | "reason";
 
@@ -77,6 +78,10 @@ const tags = createTags({
         type: "technology",
         familiarity: Familiarity.MEDIUM,
     },
+    azure: {name: "Azure", type: "technology", familiarity: Familiarity.MEDIUM},
+    gcloud: {name: "Google Cloud", type: "technology", familiarity: Familiarity.MEDIUM},
+    gql: {name: "GraphQL", type: "technology", familiarity: Familiarity.HIGH},
+    nestjs: {name: "NestJS", type: "technology", familiarity: Familiarity.HIGH},
 });
 
 export type TagID = keyof typeof tags;
@@ -117,4 +122,13 @@ export const useTagsStore = defineStore("tags", {
                 tagIds.map((tagId) => this.tagMap.get(tagId)!);
         },
     },
+    actions: {
+        get(tagId: TagID) {
+            const tag = this.tagMap.get(tagId);
+            if (!tag) {
+                throw new Error(`Invalid tagId '${tagId}'`)
+            }
+            return tag
+        }
+    }
 });

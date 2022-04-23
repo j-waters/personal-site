@@ -128,6 +128,7 @@ $shadow-multiplier: 3;
 
 .image {
     overflow: hidden;
+    max-height: 250px;
 }
 
 .image-blur {

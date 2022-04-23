@@ -27,7 +27,7 @@ const emit = defineEmits<{
 }>();
 
 const tagDetails = computed(
-    () => props.tag ?? tagsStore.tagMap.get(props.tagId!)
+    () => props.tag ?? tagsStore.get(props.tagId!)
 );
 
 const colour = computed(() => {

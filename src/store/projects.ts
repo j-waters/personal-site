@@ -44,14 +44,14 @@ export const useProjectsStore = defineStore("projects", {
     state: () => ({ projectMap: new Map() } as ProjectsStoreState),
 
     actions: {
-        async load(id: string): Promise<ProjectItem> {
+        async load(id: string): Promise<ProjectItem | null> {
             const rc = require.context("@/assets/projects/", true, /.*/);
             const post = rc(`./${id}/post.md`);
             const md = await remark()
                 .use(remarkGfm)
                 .use(remarkHtml)
                 .use(remarkFrontmatter)
-                .use(remarkFrontmatterPlugin, { yaml: load })
+                .use(remarkFrontmatterPlugin, { yaml: load, throws: true })
                 .use(() => (tree: Root, file) => {
                     for (const child of tree.children) {
                         if (child.type == "paragraph") {
@@ -65,15 +65,22 @@ export const useProjectsStore = defineStore("projects", {
                         }
                     }
                 })
-                .process(post);
+                .process(post).catch(e => console.trace("Error parsing!"));
+            if (!md) return null
             const frontMatter = md.data as Frontmatter;
+            let icon: string;
+            try {
+                icon = rc(`./${id}/logo.svg`)
+            } catch (e) {
+                icon = rc(`./${id}/logo.png`)
+            }
             const project: ProjectItem = {
                 id,
                 content: md.toString(),
                 ...frontMatter,
                 media: {
                     cover: rc(`./${id}/main.png`),
-                    icon: rc(`./${id}/logo.svg`),
+                    icon,
                 },
             };
             this.projectMap.set(id, project);

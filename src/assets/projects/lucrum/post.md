@@ -3,7 +3,7 @@ title: Lucrum
 subtitle: A money management and budgeting system
 github: https://github.com/j-waters/Lucrum
 tags: ["python", "personal", "vue", "web", "js"]
-date: 2018-01-01
+date: 2019-01-01
 ---
 
 Designed for personal use during university, Lucrum can import bank transactions, categorising them automatically, and
